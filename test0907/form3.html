@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1px solid black">
+        <tr>
+            <td colspan="2">
+                ☑️ 학생(휴학생) 및 교직원 인증
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" bgcolor="gray" height="1px"></td>
+        </tr>
+
+        <tr>
+            <td bgcolor="gray" width="100px" align="center"><font color="yellow">ID</font></td>
+            <td width="400px">
+                <input type="text" name="pid" id="pid" placeholder="아이디를 입력하세요">
+                <input type="button" name="btn" id="btn" value="중복확인">
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="gray" width="100px" align="center"><font color="yellow">비밀번호</font></td>
+            <td>
+                <input type="password" name="pw" id="pw" minlength="6" maxlength="10">
+                <font size="1">(6자리 이상으로 영문과 숫자를 조합)</font>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="gray" width="100px" align="center"><font color="yellow">비밀번호확인</font></td>
+            <td>
+                <input type="password" name="pw" id="pw" minlength="6" maxlength="10">
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="gray" width="100px" align="center"><font color="yellow">실명</font></td>
+            <td>
+                <input type="text" name="pname" id="pname" placeholder="이름을 입력하세요" minlength="1" maxlength="15">
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="gray" width="100px" align="center"><font color="yellow">학번(코드)</font></td>
+            <td>
+                <input type="text" name="pcode" id="pcode" placeholder="코드를 입력하세요(최대 8자)" minlength="1" maxlength="8">
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="gray" width="100px" align="center"><font color="black">이메일</font></td>
+            <td>
+                <input type="email" name="em1" id="em1" size="15">@
+                <input type="email" name="em2" id="em2" size="10">
+                <select name="site" id="site">
+                    <option value="self" selected>직접입력</option>
+                    <option value="naver.com">네이버</option>
+                    <option value="yahoo.com">야후넷</option>
+                    <option value="nate.com">네이트</option>
+                    <option value="kakao.com">카카오</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="gray" width="100px" align="center"><font color="black">전화번호</font></td>
+            <td>
+                <select name="nbs" id="nbs">
+                    <option value="areanb" selected>지역번호</option>
+                    <option value="kyungsang.com">경상도</option>
+                    <option value="jeunra.com">전라도</option>
+                    <option value="kangwon.com">강원도</option>
+                    <option value="gyeungki.com">경기도</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>

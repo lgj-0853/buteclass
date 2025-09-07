@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>form2</h1>
+    <table>
+        <tr>
+            <td bgcolor="#00f" width="100px">아이디</td>
+            <td>
+                <input type="text" name="pid" id="pid" placeholder="아이디를 입력하세요" maxlength="10">
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#00f">이름</td>
+            <td>
+                <input type="text" name="pname" id="pname" placeholder="이름을 입력하세요" maxlength="10">
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#00f">암호</td>
+            <td>
+                <input type="password" name="pw" id="pw" maxlength="13" minlength="8">
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#00f">성별</td>
+            <td>
+                <label><input type="radio" name="gender" id="gender1" value="man">남자</label>
+                <label><input type="radio" name="gender" id="gender2" value="woman">여자</label>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#00f">전화번호</td>
+            <td>
+                <input type="tel" name="tel" id="tel" placeholder="010-XXXX-XXXX">
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#00f">이메일</td>
+            <td>
+                <input type="email" name="em" id="em" size="8">@
+                <select name="site" id="site">
+                    <option value="naver" selected>네이버</option>
+                    <option value="daum">다음</option>
+                    <option value="kakao">카카오</option>
+                    <option value="goolge">구글</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" name="smt" id="smt" value="등록">
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

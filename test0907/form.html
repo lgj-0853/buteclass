@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM</title>
+</head>
+<body>
+    <form action="html.html" method="get">
+        <fieldset>
+            <label for="pname">
+            <legend>이름</legend>
+            </label>
+            <input type="text" name="pname" id="pname" value="이광재" maxlength="5">
+        </fieldset>
+
+        <fieldset>
+            <label for="pnick">
+            <legend>별명</legend>
+            </label>
+            <input type="text" name="pnick" id="pnick" placeholder="별명을 입력하세요" maxlength="10">
+        </fieldset>
+
+        <fieldset>
+            <label>
+            <legend>암호</legend>
+            </label>
+            <input type="password" name="pw" id="pw" minlength="8" maxlength="15">
+        </fieldset>
+
+        <fieldset>
+            <legend>성별</legend>
+            <label><input type="radio" name="gender" value="man">남자</label>
+            <label><input type="radio" name="gender" value="woman" checked>여자</label>
+            <label><input type="radio" name="gender" value="itman">IT인</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>취미</legend>
+            <label><input type="checkbox" name="netflix" id="netflix" checked>넷플릭스</label>
+            <label><input type="checkbox" name="reading" id="reading">독서</label>
+            <label><input type="checkbox" name="traveling" id="traveling">여행</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>가입일</legend>
+            <label><input type="date" name="dt" id="dt" value="2025-09-04" min="2025-09-01" max="2025-09-18"></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>예약시간</legend>
+            <label><input type="time" name="dtt" id="dtt" value="18:00" min="12:00" max="20:00"></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>출발일</legend>
+            <label><input type="datetime-local" name="dtl" id="dtl" value="2025-09-07T18:00" min="2025-09-01T12:00" max="2025-09-09T20:00"></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>달</legend>
+            <label><input type="month" name="mt" id="mt" value="2025-09" min="2025-07" max="2025-11"></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>주</legend>
+            <label><input type="week" name="wk" id="wk"></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>난이도</legend>
+            <label><input type="range" name="rg" id="rg" step="5" min="0" max="100"></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>색상</legend>
+            <label><input type="color" name="c" id="c"></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>학년</legend>
+            <label><input type="number" name="nb" id="nb" min="1" max="4" value="2" step="2"></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>전화</legend>
+            <label><input type="tel" name="tel" id="tel" placeholder="010-XXXX-XXXX"></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>이메일</legend>
+            <label><input type="email" name="em" id="em"></label>
+            <label><input type="button" name="btn" id="btn" value="중복확인"></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>사이트</legend>
+            <label><input type="url" name="url" id="url" ></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>파일</legend>
+            <label><input type="file" name="fl" id="fl"></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>가입이미지버튼</legend>
+            <label><input type="image" name="img" id="img" src="../fff/레서판다.jpg" width="100px" height="100px"></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>검색</legend>
+            <label><input type="search" name="src" id="src" placeholder="검색어를 입력하세요"></label>
+        </fieldset>
+
+        <fieldset>
+            <legend>부서</legend>
+            <label>
+                <select name="부서" id="부서">
+                    <option value="인사부">인사부</option>
+                    <option value="영업부">영업부</option>
+                    <option value="기획부" selected>기획부</option>
+                    <option value="총괄부">총괄부</option>
+                </select>
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>남기실말</legend>
+            <label>
+                <textarea name="ta" id="ta" rows="10" cols="40">
+여기는 참나무숲 
+장수풍뎅이와 사슴벌레가 살지.
+                </textarea>
+            </label>
+        </fieldset>
+
+        <fieldset>
+            
+            <label>제출<input type="submit" name="smt" id="smt" value="☑️"></label>
+            <label>초기화<input type="reset" name="rs" id="rs" value="↩️"></label>
+        </fieldset>
+
+
+    </form>
+</body>
+</html>
