@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+</head>
+<body>
+    <h1>table</h1>
+
+    <table border="1px" bgcolor="#ff0"> <!--bgcolor는 backgroundcolor임-->
+        테이블 테스트
+        <tr width="300px" height="50px"> <!--tr의 width는 의미 없음-->
+            <td width="150px">이름</td> <!--td에서 width 설정, table 속성으로도 가능하지만 개별적으로 td에서 설정하는 것이 좋다!
+                                                     같은 위치에서 width가 다른 경우 가장 큰 값으로 설정된다 / 현재 td에서 첫번째 칸에 가장 큰 값은 200px이므로 200px 적용-->
+            <td>국어</td>
+            <td>영어</td>
+            <td>수학</td>
+        </tr>
+        <!--속성이 겹칠 경우 작은 영역이 우선 순위로 td > tr > table 순이다. -->
+        <tr bgcolor="#0f0">
+            <td width="50px">장동건</td>
+            <td width="100px">70</td>
+            <td bgcolor="#faa">80 </td>
+            <td>
+                20
+                <h3>최하점</h3>
+                <img src="../fff/캥거루.jpg" width="100px" alt="">
+            </td>
+        </tr>
+
+        <tr>
+            <td width="200px">장서건</td>
+            <td>78</td>
+            <td width="80px">54</td>
+            <td>23</td>
+        </tr>
+
+        <tr>
+            <td>장남건</td>
+            <td>95</td>
+            <td>85</td>
+            <td width="150px">70</td>
+        </tr>
+
+        <tr>
+            <td>북두신건</td>
+            <td>78</td>
+            <td>92</td>
+            <td>05</td>
+        </tr>
+    
+    </table>
+
+    <table border="" width="300px" height="100px" cellspacing="5"> <!--cellspacing은 선간격이 넓어진다. 두께가 숫자만큼 두꺼워짐.-->
+        <tr>
+            <td></td>
+            <td colspan="2"></td> <!--colspan은 열과 열을 합칠 때 사용한다. 셀 병합인 셈. colspan의 숫자만큼 td를 생성하거나 지워야한다.-->
+            <td></td>
+        </tr>
+        <tr>
+            <td rowspan="2"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            
+            <td colspan="3">
+                <table border="" width="100%" height="100%">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

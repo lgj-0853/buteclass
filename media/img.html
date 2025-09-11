@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>img</title>
+</head>
+<body>
+    <!-- ../상위폴더이니까, 이미지 오른쪽 클릭 후 reveal 클릭 시 경로로 이동-->
+    <h1>img</h1>
+    <img src="../fff/호랑이.jpg" width="200px" alt="">
+    <!--경로를 복사하여 사용할 수도 있다.-->
+    <img src="C:\study\html_work\fff\호랑이.jpg" width="200px" alt="">
+    <hr>
+    <img src="../fff/캥거루.jpg" height="100px" alt="">
+    <img src="../fff/캥거루.jpg" width="100px" alt="">
+    <img src="../fff/캥거루.jpg" width="100px" height="100px" alt="">
+    <hr>
+    <img src="../fff/판다.jpg" width="100px" alt="판다이미지">
+    <img src="../fff/ddde.jpg" width="100px" alt="판다">
+    <img src="../fff/ddde.jpg" width="100px" alt="판다">
+    <hr>
+    <!-- img : 이미지를 로드하여 보여주는 태그
+            속성에는 width, height : 가로, 세로 / alt : 이미지 설명(이미지 로드 실패 시 텍스트로 내용 보여진다.)
+            / style : 디자인 설정 (border : 테두리 10px(두께), solid(모양) #f00(색상))
+    -->
+    <img src="../fff/레서판다.jpg" width="100px" style="border: 10px solid #f00">
+    <img src="../fff/레서판다.jpg" width="100px" style="border: 2px solid #f00">
+    <img src="../fff/레서판다.jpg" width="100px" style="border: 10px dashed #f00">
+    <img src="../fff/레서판다.jpg" width="100px" style="border: 10px solid #0f0">
+    <hr>
+    <div style="border: 2px solid #00f;">박스입니다1</div>
+    <!--border로 테두리를 만들 수 있다-->
+    <div style="border: 2px solid #00f; width: 100px; height: 100px;">박스입니다2</div>
+    <!-- width와 height로 너비와 높이를 설정할 수 있다-->
+    <div style="border: 2px solid #00f; width: 100px; height: 100px; background-color: #ff0;">박스입니다3</div>
+    <!-- background-color로 배경색을 설정할 수 있다-->
+    <div style="width: 400px; height: 500px; background: #0f0;">박스입니다4</div>
+    <!-- 굳이 background-color할 필요없이 background로도 가능하다-->
+    <div style="width: 200px; height: 200px; background: url('../fff/호랑이.jpg');">박스입니다5</div>
+    <!-- background에 url('경로')를 설정하여 배경색에 url 화면을 나타낼 수 있다-->
+    <div style="width: 200px; height: 200px; background-image: url('../fff/호랑이.jpg');">박스입니다6</div>
+    <!-- background-image로도 url 설정이 가능하다-->
+    <div style="width: 400px; height: 500px; 
+    background-image: url('../fff/호랑이.jpg');
+    background-size: 30px;">박스입니다7</div>
+    <!--background-size로 크기안에 해당 이미지를 반복해서 넣는다-->
+    <div style="width: 400px; height: 500px; 
+    background-image: url('../fff/호랑이.jpg');
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-color: #ff0;
+    background-position: 100px 50px;">박스입니다8</div>
+    <!--
+    background-repeat에서 no-repeat은 반복하지 않게 설정한다.
+    background-color는 배경색을 꾸며주는데, 이때 이미지가 완전히 채워지지 않을 때 배경색이 채워진다.(사이즈, 노리피트)
+    background-position은 왼쪽 상단을 기준으로 한다. 왼쪽으로 100px, 위에서 50px 떨어지는 것을 의미-->
+    <div style="width: 400px; height: 500px; 
+    background-image: url('../fff/호랑이.jpg');
+    background-size: 100px;
+    background-repeat: repeat-x;
+    background-color: #faa;
+    background-position: 100px 50px;">박스입니다9</div>
+    <!--background-repeat에서 repeat-x or y는 그 축으로만 이미지가 반복되는 것을 의미-->
+    <hr>
+    <img src="../fff/레서판다.jpg" width="100px" alt="">
+    <img src="../fff/판다.jpg" width="100px" alt="" align="right">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa perspiciatis dignissimos, possimus velit eligendi cumque explicabo 
+    voluptas porro praesentium minima est aliquam fuga eveniet? Deserunt debitis placeat ducimus iste assumenda!
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa perspiciatis dignissimos, possimus velit eligendi cumque explicabo 
+    voluptas porro praesentium minima est aliquam fuga eveniet? Deserunt debitis placeat ducimus iste assumenda!
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa perspiciatis dignissimos, possimus velit eligendi cumque explicabo 
+    voluptas porro praesentium minima est aliquam fuga eveniet? Deserunt debitis placeat ducimus iste assumenda!
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa perspiciatis dignissimos, possimus velit eligendi cumque explicabo 
+    voluptas porro praesentium minima est aliquam fuga eveniet? Deserunt debitis placeat ducimus iste assumenda!
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa perspiciatis dignissimos, possimus velit eligendi cumque explicabo 
+    voluptas porro praesentium minima est aliquam fuga eveniet? Deserunt debitis placeat ducimus iste assumenda!
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa perspiciatis dignissimos, possimus velit eligendi cumque explicabo 
+    voluptas porro praesentium minima est aliquam fuga eveniet? Deserunt debitis placeat ducimus iste assumenda!
+
+     <hr>
+     <!--align을 안한 것과 align="left"를 한것은 차이가 있다. 안한 것은 이미지가 글씨에 방해받지 않는다. 한것은 글씨가 이미지주위로 몰려든다-->
+     <!--hspace는 좌우여백, vspace는 상하여백을 줄 수 있다-->
+    <img src="../fff/여우.jpg" width="100px" alt="" align="left" hspace="50px">
+    <img src="../fff/캥거루.jpg" width="100px" alt="" align="right" vspace="20px">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa perspiciatis dignissimos, possimus velit eligendi cumque explicabo 
+    voluptas porro praesentium minima est aliquam fuga eveniet? Deserunt debitis placeat ducimus iste assumenda!
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa perspiciatis dignissimos, possimus velit eligendi cumque explicabo 
+    voluptas porro praesentium minima est aliquam fuga eveniet? Deserunt debitis placeat ducimus iste assumenda!
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa perspiciatis dignissimos, possimus velit eligendi cumque explicabo 
+    voluptas porro praesentium minima est aliquam fuga eveniet? Deserunt debitis placeat ducimus iste assumenda!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa perspiciatis dignissimos, possimus velit eligendi cumque explicabo 
+    voluptas porro praesentium minima est aliquam fuga eveniet? Deserunt debitis placeat ducimus iste assumenda!
+    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA4MjZfMjE4%2FMDAxNzI0NjU2NDYxODIx.HcYMgQGwn1P_yRF4ZSe6F7FFb-WDNPL3tIZpigOb2WAg.mtqsa7MUOo6qrtvh2r-XqIGTFNqUbkBWyOIqtiBu7fIg.PNG%2F%25BD%25BD%25B6%25F3%25C0%25CC%25B5%25E52.PNG&type=sc960_832" alt="" width="300px">
+
+</body>
+</html>

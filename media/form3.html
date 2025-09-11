@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 테스트용</title>
+</head>
+<body>
+    <form action="">
+        <table cellspacing="0">
+            
+            <tr>
+                <td colspan="2">
+                    <font color="green">◆</font>&nbsp; 학생(휴학생) 및 교직원 인증
+                </td>
+            </tr>
+            <tr>
+                <td bgcolor="gray" colspan="2" ></td>
+            </tr>
+            <tr align="center">
+                <td bgcolor="gray" width="150px" height="50px">인증</td>
+                <td align="left"><input type="submit" value="인증하기" style="color:white; background-color: green;"></td>
+            </tr>
+            <tr>
+                <td bgcolor="gray" colspan="2" ></td>
+            </tr>
+            <tr>
+                <td >
+                    <font color="green">◆</font>&nbsp; 기본정보입력
+                </td>
+                <td>
+                    <label><input type="radio" name="grade" value="s">학생 및 교직원</label>
+                    <label><input type="radio" name="grade" value="g">졸업자</label>
+                    <label><input type="radio" name="grade" value="p">복수전공자</label>
+                    <label><input type="radio" name="grade" value="n">일반인</label>
+                </td>
+            </tr>
+            <tr >
+                <td bgcolor="gray" colspan="2"></td>
+            </tr>
+
+            <tr align="center">
+                <td bgcolor="gray" width="100px" height="50px" style="color: gold">ID</td>
+                <td align="left">
+                    <input type="text" name="pid" placeholder="아이디를 입력하세요">
+                    <input type="button" name="bttn" value="중복확인">
+                </td>
+            </tr>
+            <tr >
+                <td bgcolor="gray" colspan="2"></td>
+            </tr>
+            <tr align="center">
+                <td bgcolor="gray" width="100px" height="50px" style="color: gold">비밀번호</td>
+                <td align="left">
+                    <label><input type="password" name="pw"><font size="1">(6자리 이상으로 영문과 숫자를 조합)</font></label>
+            
+                </td>
+            </tr>
+            <tr >
+                <td bgcolor="gray" colspan="2"></td>
+            </tr>
+            <tr align="center">
+                <td bgcolor="gray" width="100px" height="50px" style="color: gold">비밀번호확인</td>
+                <td align="left">
+                    <label><input type="password" name="pw"></label>
+                </td>
+            </tr>
+            <tr >
+                <td bgcolor="gray" colspan="2"></td>
+            </tr>
+            <tr align="center">
+                <td bgcolor="gray" width="100px" height="50px" style="color: gold">실명</td>
+                <td align="left">
+                    <label><input type="text" name="pname"></label>
+                </td>
+            </tr>
+
+            <tr >
+                <td bgcolor="gray" colspan="2"></td>
+            </tr>
+
+            <tr align="center">
+                <td bgcolor="gray" width="100px" height="50px" style="color: gold">학번(코드)</td>
+                <td align="left">
+                    <label><input type="text" name="pcode"></label>
+                </td>
+            </tr>
+            <tr >
+                <td bgcolor="gray" colspan="2"></td>
+            </tr>
+
+            <tr align="center">
+                <td bgcolor="gray" width="100px" height="50px" style="color: black">이메일</td>
+                <td align="left">
+                    <label><input type="email" name="email1">@</label>
+                    <input type="email" name="email2">
+
+                    <select name="com" id="com">
+                        <option value="option" selected>직접입력</option>
+                        <option value="naver.com">네이버</option>
+                        <option value="kakao.com">카카오</option>
+                        <option value="nate.com">네이트</option>
+                    </select>
+
+                </td>
+            </tr>
+            <tr >
+                <td bgcolor="gray" colspan="2"></td>
+            </tr>
+
+            <tr align="center">
+                <td bgcolor="gray" width="100px" height="50px" style="color: black">전화번호</td>
+                <td>
+                    <select name="areaphone" id="areaphone">
+                        <option value="지역번호" selected>지역번호</option>
+                        <option value="충청도">+085</option>
+                        <option value="경상도">+082</option>
+                        <option value="전라도">+087</option>
+                    </select>
+
+                    <input type="tel" name="phone1"> -
+                    <input type="tel" name="phone2">
+                </td>
+            </tr>
+            <tr >
+                <td bgcolor="gray" colspan="2"></td>
+            </tr>
+
+              <tr align="center">
+                <td bgcolor="gray" width="100px" height="50px" style="color: black">주소지</td>
+                <td>
+                    <input type="text" name="address1"> - 
+                    <input type="text" name="address2">
+                    <input type="button" name="bttn" value="우편주소찾기">
+                </td>
+            </tr>
+            <tr >
+                <td bgcolor="gray" colspan="2"></td>
+            </tr>
+
+        </table>
+        <table>
+            <tr valign="top" align="left">
+                <td width="300px"  >
+                    <label><input type="checkbox" name="이용약관동의">이용약관 동의</label><br/>
+                    <textarea cols="30" rows="6">fjewofjoweqjfiojwfjefwojefw</textarea>
+                </td>
+                <td>
+                    <label><input type="checkbox" name="이용약관동의">개인정보 수집 및 이용 동의</label><br/>
+                    
+                    <textarea cols="30" rows="6">fjewofjoweqjfiojwfjefwojefw</textarea>
+                </td>
+            </tr>
+
+        </table>
+    
+    
+    </form>
+</body>
+</html>
