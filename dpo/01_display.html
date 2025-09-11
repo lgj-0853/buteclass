@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_display</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        div, span, img{ 
+            /* div는 block이고, span은 inline이다. block은 너비, 높이 조절 가능, inline은 불가능하다.
+              따라서 span에는 너비와 높이가 적용되지 않을 것이다. */
+            width: 100px;
+            height: 30px;
+            background-color: #ff0;
+            /* margin: 5px */
+        }
+        .bb{
+            display: block; 
+            /* float: left; */
+            /* span 클래스가 bb인 상태에서 display를 block해주었기 때문에 너비, 높이 조절이 가능하게 되었다. */
+        }
+
+        .ss{
+            display: inline;
+            /* div 클래스가 ss인 상태에서 display를 inline해주었기 때문에 너비, 높이 조절은 불가능하지만 간격이 생기게 되었다. */
+        }
+
+        .nn{
+            display: none;
+            /* 공간과 위치를 차지하지 않고 보이지 않는다. */
+        }
+
+        .hh{
+            visibility: hidden;
+            /* 공간과 위치를 차지하고 보이지 않는다. */
+        }
+
+        .tb{
+            width: 800px;
+            height: 600px;
+            background-color: #0f0;
+            display: table;
+        }
+
+        .row{
+            /*width: 700px; 의미 없음 - 테이블에 맞춰서 보임
+            height: 100px;*/
+            background-color: #0ff;
+            display: table-row;
+        }
+        .cell{
+            /* width: 100px; 의미 없음 - 테이블에 맞춰서 보임
+            height: 60px; */
+            background-color: #f0f;
+            display: table-cell;
+            border: 1px solid #ccc;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>01_display</h1>
+    <h2>block</h2>
+    <div>div1</div>
+    <div class="bb">div2</div>
+    <span class="bb">span3</span>
+    <img src="../fff/여우.jpg" alt="" class="bb">
+    <img src="../fff/호랑이.jpg" alt="" class="bb">
+    <div>div4</div>
+    
+
+    <h2>span</h2>
+    <span>span5</span>
+    <span class="ss">span6</span>
+    <div class="ss">div7</div>
+    <img src="../fff/여우.jpg" alt="" class="ss">
+    <img src="../fff/호랑이.jpg" alt="" class="ss">
+    <div class="ss">div8</div>
+
+    <h2>none</h2>
+    <div>div9</div>
+    <div class="nn">div10</div>
+    <span class="nn">span11</span>
+    <img src="../fff/여우.jpg" alt="" class="nn">
+    <div>div12</div>
+
+    <h2>hidden</h2>
+    <div>div12</div>
+    <div class="hh">div14</div>
+    <span class="hh">span15</span>
+    <img src="../fff/여우.jpg" alt="" class="hh">
+    <div>div16</div>
+
+    <h2>table</h2>
+    <div class="tb">
+        <div class="row">
+            <div class="cell">1</div>
+            <div class="cell">2</div>
+            <div class="cell">3</div>
+        </div>
+        <div class="row">
+            <div class="cell">4</div>
+            <div class="cell">5</div>
+            <div class="cell">6</div>
+        </div>
+    </div>
+    
+
+
+</body>
+</html>

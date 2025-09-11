@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_property</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        div{
+            width: 300px;
+            height: 40px;
+            margin: 10px;
+            border: 1px solid #888;
+
+        }
+
+        img{
+            width: 100px;
+        }
+
+        div[ttt-data="abc"]{ /*정확하게 일치*/
+            color: #f00;
+        }
+
+        div[ttt-data~=abc]{ /*단어형태로 abc, 띄어쓰기로 구분(띄어쓰기만 되어 있다면 abc 위치가 어디든 상관 ㄴㄴ)
+                                abc, abc qwe, wefw abc fwef */
+            font-weight: bolder;
+        }
+
+        div[ttt-data|="abc"]{ /*단어형태로 abc, - 로 구분(abc가 무조건 앞쪽에 위치해 있어야 함)
+                                abc, abc-qwe */
+            font-style: italic;
+        }
+
+        div[ttt-data^="abc"]{ /* abc로 시작 
+                                abc,abc qwe, abc-qwe, abcwefwfwef */
+            text-align: center;
+        }
+
+        div[ttt-data$="abc"]{ /*abc로 끝나는 경우
+                                abc, zzzfewfewfabc */
+            text-decoration: underline;
+        }
+
+        div[ttt-data*="abc"]{ /*abc 포함 띄어쓰기를 하던 뭘 하던 abc가 포함되면 모두 선택
+                                eee를 제외한 모두가 선택됨. */
+            background-color: #ff0;
+        }
+
+        .aaa{
+            color: #00f;
+        }
+
+        .bbb{
+            font-size: 30px;
+        }
+
+        .ccc{
+            text-align: right;
+        }
+
+        .aaa .bbb{
+            background-color: #fa0;
+        }
+
+        .aaa .bbb{
+            background-color: #f0f;
+        }
+
+        div[class='aaa bbb']{
+            background-color: #0f0;
+        }
+
+        img[src$=jpg], img[src$=jpeg]{
+            border: 4px solid #f00;
+        }
+
+        img[src$=bmp], img[src$=gif]{
+            border: 4px solid #00f;
+        }
+
+        img[src$=png]{
+            border: 4px solid #0f0;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <h1>07_property</h1>
+    <div ttt-data="abc">abc 이지롱</div>
+    <div ttt-data="eee">eee 이지롱</div>
+    <div ttt-data="abc qwe">abc qwe 이지롱</div>
+    <div ttt-data="abc-qwe">abc-qwe 이지롱</div>
+    <div ttt-data="wefw abc fwef">wefw abc fwef 이지롱</div>
+    <div ttt-data="sdf-abc-qwe">sdf-abc-qwe 이지롱</div>
+    <div ttt-data="abcwefwfwef">abcwefwfwef 이지롱</div>
+    <div ttt-data="zzzfewfewfabc">zzzfewfewfabc 이지롱</div>
+    <div ttt-data="zzzabcwefwefwe">zzzabcwefwefwe 이지롱</div>
+
+    <div class="aaa bbb">클래스 aaa bbb</div>
+    <div class="aaa ccc">클래스 aaa ccc</div>
+
+    <img src="../fff/여우.jpg" alt="">
+    <img src="../fff/여우.png" alt="">
+    <img src="../fff/여우.bmp" alt="">
+    <img src="../fff/여우.gif" alt="">
+    <img src="../fff/여우.jpeg" alt="">
+
+</body>
+</html>
+
+<!--
+jpg. jpeg : 테두리 빨강
+bmp, gif : 테두리 파랑 
+png : 테두리 녹색
+-->

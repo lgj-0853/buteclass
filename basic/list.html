@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list</title>
+</head>
+<!-- ol: 순서가 있는 목록 type: 1, A, a, I (가, ㄱ 불가)
+     ul: 순서가 없는 목록 type: disc, circle, square
+     ol 속성에 start="숫자"를 할 경우 해당 숫자부터 순서대로 나열
+     li 속성에 value="숫자"를 할 경우 해당 숫자부터 순서대로 나열
+-->
+<body>
+    <h1>Ordered list</h1>
+    <ol start="5" type="A">
+        <li>Lorem</li>
+        <li>Ipsum</li>
+        <li value="9">Dolor</li>
+    </ol>
+    <h1>Unorderd list</h1>
+    <ul type="square">
+        <li>Lorem</li>
+        <li>Ipsum</li>
+        <li>Dolor</li>
+    </ul>
+    <!-- 목록 안에 목록을 집어넣을 수 있다!-->
+    <h1>Sub list</h1>
+    <ol type="I">
+        <li>
+            파일
+            <ol>
+                <li>새로만들기</li>
+                <li>소로만들기</li>
+                <li>개로만들기</li>
+            </ol>
+        </li>
+        <br>
+        <li>
+            편집
+            <ul type="disc">
+                <li>잘라내기</li>
+                <li>복사하기</li>
+                <li>붙여넣기</li>
+            </ul>
+
+        </li>
+        <li>보기</li>
+        <li>실행</li>
+        <li>도움말</li>
+    </ol>
+    <!-- 
+      dl : 제목:내용 형태의 목록
+      dt : 제목 / dd : 내용
+    -->
+    <h1>Definition List</h1>
+    <dl>
+        <dt>제목이에요1</dt>
+        <dd>내용이에요1</dd>
+
+        <dt>제목이에요2</dt>
+        <dd>내용이에요2</dd>
+
+        <dt>제목이에요3</dt>
+        <dd>내용이에요3</dd>
+    </dl>
+</body>
+</html>

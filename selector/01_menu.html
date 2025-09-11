@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_menu</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu{
+            width: 200px;
+            height: auto;
+            text-align: center;
+            background-color: #000;
+            color: #fff;
+            border-top: 1px solid #363434;
+            font-weight: bolder;
+            line-height: 30px;
+            
+        }
+
+        .sub{
+            width: 200px;
+            height: 20px;
+            text-align: center;
+            background-color: #857b7b;
+            color: #000;
+            border-bottom: 1px solid #363434;
+            line-height: 20px;
+
+        }
+
+        .sub:hover{
+            background-color: #f00;
+            color: #ff0;
+            font-weight: bolder;
+            transition-duration: 0.5s;
+        }
+
+        .sup{
+            height: 0px;
+            overflow: hidden;
+            
+        }
+
+        .menu:hover > .sup{
+            display: block;
+            transition-duration: 0.5s;
+            height: 84px;
+
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <h1>01_menu</h1>
+    <div>
+        <div class="menu">
+            메뉴1
+            <div class="sup">
+                <div class="sub">sub_1_1</div>
+                <div class="sub">sub_1_2</div>
+                <div class="sub">sub_1_3</div>
+                <div class="sub">sub_1_4</div>
+            </div>
+        </div>
+        <div class="menu">
+            메뉴2
+            <div class="sup">
+                <div class="sub">sub_2_1</div>
+                <div class="sub">sub_2_2</div>
+                <div class="sub">sub_2_3</div>
+                <div class="sub">sub_2_4</div>
+            </div>
+        </div>
+        <div class="menu">
+            메뉴3
+            <div class="sup">
+                <div class="sub">sub_3_1</div>
+                <div class="sub">sub_3_2</div>
+                <div class="sub">sub_3_3</div>
+                <div class="sub">sub_3_4</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

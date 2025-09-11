@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_shadowNav</title>
+    <style>
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+
+    h1{
+        position: relative;
+        top: 0px;
+        width: 100%;
+        height: 35px;
+        line-height: 35px;
+    }
+
+    .wrapper{
+        position: relative;
+        margin: auto;
+        width: 50%;
+        height: 1500px;
+        left: 0px;
+        top: 0px;
+    }
+
+    .n1{
+        background-color: orange;
+        width: 600px;
+        height: 100px;
+    }
+
+    .n2{
+        background-color: #ff0;
+        width: 600px;
+        height: 900px;    
+    }
+
+    .n3{
+        background-color: #0f0;
+        width: 600px;
+        height: 500px;
+        text-align: left;
+    }
+
+    .n11{
+        position: relative;
+        width: 300px;
+        height: 50px;
+        background-color: #0f0;
+        left: 50%;
+        top: -50px;
+        text-align: center;
+        line-height: 50px;
+    }
+
+    h2{
+        height: 100px;
+        text-align: left;
+        line-height: 100px;
+        margin-left: 10px;
+    }
+
+    .header{
+        width: 600px;
+        height: 80px;
+        background-color: rgba(228, 39, 212, 0.514);
+        padding-top: 20px;
+        position: sticky;
+        left: 0px;
+        top: -20px; 
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 10px 10px 15px #333;
+    }
+
+    .img1{
+        width: 200px;
+        height: 150px;
+        margin: 20px;
+    }
+
+    .top1{
+        display: block;
+        position: fixed;
+        border: 10px double #f00;
+        background-color: #fff;
+        border-radius: 30px;
+        width: 80px;
+        height: 470px;
+        right: 300px;
+        bottom: 100px;
+        padding: 10px 10px;
+    }
+
+    .top2{
+        display: block;
+        width: 80px;
+        height: 80px;
+        margin: 10px auto;
+        text-align: center;
+        border-bottom: 2px solid gray;
+        line-height: 80px;
+    }
+
+    .top1 > #top3{
+        border: 1px solid gray;
+        border-radius: 10px;
+        text-decoration: underline;
+    }
+
+    .top1 > #top3:focus{
+        top: 0px;
+    }
+
+    .top1 > div{
+        position: relative;
+        height: 2px;
+        width: 80px;
+        background-color: #333;
+        margin: 1px;
+    }
+    
+    </style>
+
+</head>
+
+<body>
+    <h1 id="top">03_shadowNav</h1>
+    <div class="wrapper">
+
+        <div class="header">
+            난 메뉴바지롱
+        </div>
+
+        <div class="box n1">
+            <h2 id="logo">로고</h2>
+            <div class="box n11">로그인 | 마이페이지 | 회원가입</div>
+        </div>
+
+        <div class="box n2" id="animal">
+            <p>
+                <img src="../fff/판다.jpg" alt="" align="left" class="img1" >
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Culpa perspiciatis dignissimos, possimus velit eligendi cumque explicabo 
+                voluptas porro praesentium minima est aliquam fuga eveniet? Deserunt debitis placeat ducimus iste assumenda!
+            </p>
+
+            <p>
+                <img src="../fff/레서판다.jpg" alt="" align="right" class="img1" vspace="20px">
+                <br><br><br><br><br><br><br><br>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Culpa perspiciatis dignissimos, possimus velit eligendi cumque explicabo 
+                voluptas porro praesentium minima est aliquam fuga eveniet? Deserunt debitis placeat ducimus iste assumenda!
+            </p>
+
+            <p>
+                <img src="../fff/호랑이.jpg" alt="" align="left" class="img1" hspace="20px">
+            </p>
+
+        </div>
+
+        <div class="box n3" id="putter">
+            푸터
+        </div>
+
+    </div>
+
+        <div class="top1">
+            1<img src="../fff/여우.jpg" alt="" class="top2">
+                <div></div>
+            2<img src="../fff/여우.jpg" alt="" class="top2">
+                <div></div>
+            3<img src="../fff/여우.jpg" alt="" class="top2">
+                <div></div>
+            <a href="#top" class="top2" id="top3">top</a>
+        </div>
+</body>
+</html>
