@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_reactbox</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            position: relative;
+            width: 1300px;
+            height: 50vh;
+            margin: 20px;
+            background-color: #ff0;
+        }
+
+        header > nav:nth-of-type(1){
+            background-color: #00f;
+            font-size: 3rem;
+            width: 200px;
+            height: 7vh;
+            text-align: center;
+            line-height: 7vh;
+            color: #fff;
+            margin-left: 550px;
+        }
+
+        header > div:nth-of-type(1){
+            position: absolute;
+            background-color: bisque;
+            width: 70vw;
+            height: 30vh;
+            margin: 20px 0px;
+            left: 120px;
+            /*margin-left: 120px;*/
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            
+        }
+
+        header > div:nth-of-type(1) > div{
+            border: 2px solid #f00;
+            width: 20vw;
+            height: 13vh;
+            margin: 10px;
+        }
+
+        @media screen and (max-width:600px){ /*핸드폰*/
+            header{
+                background-color: #faf;
+            }
+
+        }
+
+        @media screen and (min-width:600px)
+                    and (max-width:1200px){ /*태블릿*/
+            header{
+                background-color: aqua;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>04_reactbox</h1>
+    <header>
+        <nav>로고</nav>
+        <div>
+            <div>내용1</div>
+            <div>내용2</div>
+            <div>내용3</div>
+            <div>내용4</div>
+            <div>내용5</div>
+            <div>내용6</div>
+            <div>내용7</div>
+            <div>내용8</div>
+        </div>
+    </header>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        wrapper{
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 650px;
+        }
+
+        header{
+            position: relative;
+            width: 1000px;
+            height: 100px;
+            border: 2px solid #000;
+            margin: 0px 10px;
+        }
+
+        header > nav:nth-child(1){
+            width: 200px;
+            height: 100px;
+            background-color: #ff0;
+            font-weight: bold;
+            text-align: center;
+            line-height: 100px;
+            font-size: 30px;
+            float: left;
+        }
+
+        header > nav:nth-child(2){
+            width: 320px;
+            height: 30px;
+            background-color: #ff0;
+            line-height: 30px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            gap: 20px;
+        }
+
+        header > nav:nth-child(3){
+            width: 320px;
+            height: 30px;
+            background-color: #fa0;
+            line-height: 30px;
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            gap: 20px;
+        }
+
+        header > .menu1, header > .menu2{
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        section{
+            width: 700px;
+            margin-bottom: 10px;
+            float: left;
+        }
+
+        article{
+            padding: 20px;
+            border: 2px solid #000;
+            margin: 10px;
+        }
+
+        article > div:nth-child(1){
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        article > div:nth-child(2){
+            font-size: 15px;
+        }
+
+        aside{
+            clear: both;
+            position: absolute;
+            float: right;
+            border: 2px solid #000;
+            margin-top: 10px;
+            margin-left: 740px;
+            width: 230px;
+            height: 290px;
+            padding: 20px;
+            
+        }
+
+        aside > div:nth-child(1){
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        aside > div:nth-of-type(3){
+            background-color: gray;
+            
+        }
+
+        aside > div:nth-of-type(3) > div:nth-child(1){
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 7px;
+            
+        }
+
+        footer{
+            border: 2px solid #000;
+            width: 960px;
+            height: 50px;
+            padding: 20px;
+            margin: 10px;
+            clear: both;
+        }
+
+        footer > div:nth-of-type(1){
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 40px;
+        }
+
+        footer > div:nth-of-type(2){
+            text-align: center;
+            
+            
+            line-height: 10px;
+        }
+
+
+
+        
+
+
+    </style>
+</head>
+<body>
+    <wrapper>
+        <header>
+            <nav>WEB-logo</nav>
+            <nav class="menu1">
+                <div>menu-1</div>
+                <div>menu-1</div>
+                <div>menu-1</div>
+                <div>menu-1</div>
+            </nav>
+            <nav class="menu2">
+                <div>menu-2</div>
+                <div>menu-2</div>
+                <div>menu-2</div>
+                <div>menu-2</div>
+            </nav>
+        </header>
+
+        <section>
+            <article>
+                <div>Main Article</div>
+                <div>
+                    ColorZilla for Google Chrome is an extension that assists web develops and graphic <br>
+                    designers with color related tasks - both basic and advanced. ColorZilla includes a Color <br>
+                    Picker, Eye Dropper, Gradient Generator and many additional advanced color tools.
+                </div>
+            </article>
+            <article>
+                <div>Main Article</div>
+                <div>
+                    ColorZilla for Google Chrome is an extension that assists web develops and graphic <br>
+                    designers with color related tasks - both basic and advanced. ColorZilla includes a Color <br>
+                    Picker, Eye Dropper, Gradient Generator and many additional advanced color tools.
+                </div>
+            </article>
+            <article>
+                <div>Main Article</div>
+                <div>
+                    ColorZilla for Google Chrome is an extension that assists web develops and graphic <br>
+                    designers with color related tasks - both basic and advanced. ColorZilla includes a Color <br>
+                    Picker, Eye Dropper, Gradient Generator and many additional advanced color tools.
+                </div>
+            </article>
+        </section>
+
+        <aside>
+            <div>right aside</div>
+            <div>ColorZilla for Google Chrome <br> 
+                is an extension that <br>
+                assists web develops and <br>
+                graphic designers with <br> 
+                color related tasks - both <br>
+                basic and advanced.</div>
+            <input type="email" name="asideemail">
+            <br>
+            <input type="submit" name="asidebttn" value="mailto">
+            <div>
+                <div>TEXT</div>
+                <div>banner</div>
+            </div>
+        </aside>
+
+        <footer>
+            <div>html5</div>
+            <div>divcss.cafe24.com</div>
+        </footer>
+    </wrapper>
+</body>
+</html>
+

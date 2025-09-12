@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_react</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        header, section, footer{ /*데스트탑*/
+            width: 90vw;
+            height: 100px;
+            margin: 20px;
+            background-color: #ff0;
+            font-size: 3rem;
+        }
+
+        @media screen and (max-width:600px){ /*핸드폰*/
+            section{
+                background-color: #0ff;
+                font-size: 2rem;
+            }
+
+            footer{
+                width: 300px;
+                height: 200px;
+            }
+        }
+
+        @media screen and (min-width:600px)
+                    and (max-width:1200px){ /*태블릿*/
+            section{
+                background-color: #f0f;
+                font-size: 2rem;
+            }
+
+            header{
+                color: #f00;
+                background-image: url(../fff/family14.JPG);
+                background-size: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>03_react</h1>
+    <header>난 헤더</header>
+    <section>난 섹션</section>
+    <footer>난 푸터</footer>
+</body>
+</html>
