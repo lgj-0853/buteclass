@@ -33,10 +33,10 @@
         ]
 
         // 2. 계산부
-        for (let i in studs){
-            let tot = 0
-            let jumsu = studs[i].slice(1)
-            for (const j of studs[i].slice(1) ){
+        for (let i in studs){ // 인덱스 갯수를 의미
+            let tot = 0 // tot+= j를 위한 변수 선언
+            let jumsu = studs[i].slice(1) // 평균값을 구하기 위한 횟수를 표현하기 위해 사용, slice는 구간 지정(4,8)이면 4번째에서 8번째있는 것을 출력
+            for (const j of studs[i].slice(1) ){ // 1번째에서 끝부분까지의 배열에 원소를 j에게 대입(j는 77부터 시작) 
                 tot += j
                 console.log(j, tot)
             }
