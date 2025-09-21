@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12_while</title>
+</head>
+<body>
+    <h1>12_while</h1>
+    <script>
+        let i = 10;  // 초기값을 주었음
+        // while은 무한반복문으로서 조건만 입력한 상태에서 무한 반복함. 초기값과 증감을 걸어주어 제한해야함.
+        while (i <= 20) { // 조건만 있음.
+            console.log('while 실행', i)
+            i++     // 증감을 주었음. 초기값과 증감은 개발자가 직접 넣어야 한다.
+        }
+        console.log('while 종료 ---------------------1 ')
+
+        // 내가 만든 것
+
+        let s = 0;
+        while(s < 20){
+            s++
+            if(s%3==0){
+                console.log('짝')
+            }
+            else if(s > 10 && s % 10 && s/3!==0){
+                console.log('짝')
+            }
+
+            else{console.log(`${s}`)}
+
+        }
+
+        // 강사님께서 만드신 것
+
+        let no = 1
+
+        while(no<=20){
+         let one = no % 10
+         if(one%3==0 && one){ // one 말고 one !==0 하면 어떨까?
+            console.log('짝')
+        }else{
+            console.log(no, one)
+        }
+        no++
+    }
+        
+        no++
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10_login</title>
+</head>
+<body>
+    <h1>10_login</h1>
+    <script>
+        /*let aaa = prompt("아이디") // prompt : 입력창을 열어준다
+        // console.log(aaa) // prompt에 글자를 작성하면 해당 글자가 console에 출력된다.
+
+        alert(aaa) // alert : 경고창을 열어준다.
+        console.log(aaa)*/
+
+        for (;;) {
+            let pid = prompt("아이디")
+            let pw = prompt("암호")
+
+            if(pid!='aaa' || pw!='1234'){
+                alert('로그인 실패')
+                continue // 맞지 않으면 다시 돌아가게 함.
+            }
+            break // 맞으면 출력되게 함.
+            
+        }
+        alert("로그인 되었습니다.")
+    </script>
+</body>
+</html>

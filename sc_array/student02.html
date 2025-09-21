@@ -24,9 +24,7 @@
 
         .row {
             display: flex;
-            background-color: #fff;
             align-items: center;
-            transition: background-color 0.3s ease;
             background-color: #000000;
             color: white;
             font-weight: bold;
@@ -45,7 +43,6 @@
             display: flex;
             background-color: #302929;
             align-items: center;
-            transition: background-color 0.3s ease;
             color: white;
             font-weight: bold;
             font-size: 1em;
@@ -58,29 +55,31 @@
             border-bottom: 1px solid #463c3c
         }
 
-        .su{
+        .su {
             color: #f00;
             font-size: 1.2rem;
             font-weight: bold;
         }
 
-        .woo{
+        .woo {
             color: #fa0;
             font-size: 1.2rem;
             font-weight: bold;
         }
 
-        .mi{
+        .mi {
             color: #ff0;
             font-size: 1.2rem;
             font-weight: bold;
         }
-        .yang{
+
+        .yang {
             color: #0f0;
             font-size: 1.2rem;
             font-weight: bold;
         }
-        .ga{
+
+        .ga {
             color: rgb(102, 102, 236);
             font-size: 1.2rem;
             font-weight: bold;
@@ -171,7 +170,7 @@
           그러면 studs 안에 각 배열에 인덱스 6, 7이 추가되면서 그 안에 합계와 평균값이 나옴.
           */
 
-          for (let i in studs) { // 등급
+        for (let i in studs) { // 등급
             let grade = 0;
             const a = studs[i][7]
 
@@ -266,6 +265,7 @@
 
         console.log(studs);
 
+        // ----------------------------------------------------------------------------------------------------
 
         let studs2 = [ // 성별 별 등수(전체)
             [1, "여", "정서연", 97, 90, 92],
@@ -335,30 +335,26 @@
             const a = studs2[i][7]
 
             if (a >= 90) {
-                grade = '수'
+                grade = `<div class="su">수</div>`
             }
             else if (a >= 80) {
-                grade = '우'
+                grade = `<div class="woo">우</div>`
             }
 
             else if (a >= 70) {
-                grade = '미'
+                grade = `<div class="mi">미</div>`
             }
 
             else if (a >= 60) {
-                grade = '양'
+                grade = `<div class="yang">양</div>`
             }
 
             else {
-                grade = '가'
+                grade = `<div class="ga">가</div>`
             }
-            
-            studs2[i].push(grade)
-            
-             
-        }
 
-       
+            studs2[i].push(grade)
+        }
 
         for (let my_rank in studs2) { //등수
             let rank = 1;
@@ -379,7 +375,7 @@
         그러면 성별 별로 등수가 나타나게 됨.
         */
 
-        for (let i = 0; i < studs2.length - 1; i++) {
+        for (let i = 0; i < studs2.length - 1; i++) { // 정렬
             for (let j = 0; j < studs2.length - 1 - i; j++) {
                 if (studs2[j][9] > studs2[j + 1][9]) {
                     let chg = studs2[j];
@@ -393,7 +389,7 @@
         const female_studs = [];
 
 
-        for (const student of studs2) {
+        for (const student of studs2) { // 남여 구분
             const gender = student[1];
 
             if (gender === "남") {
@@ -407,7 +403,9 @@
         console.log(male_studs)
         console.log(female_studs)
 
-        document.write(`<div class= logo1>2. 전체 등수</div>`)
+        // ----------------------------------------------------------------------------------------------------
+
+        document.write(`<div class= logo1>2. 전체 등수</div>`) // 전체 등수
 
         let headerText = ['반', '성별', '성명', '국어', '영어', '수학', '총점', '평균', '등급', '등수'];
         let header = `<div class="row">`;
@@ -419,10 +417,54 @@
         document.write(header)
 
 
-         for (let i = 0; i <= 50 && i < studs.length; i++) {
+        for (let i = 0; i <= 50 && i < studs.length; i++) {
             document.write(`<div class="allrow">`);
             for (let j = 0; j < studs[i].length; j++) {
                 document.write(`<div class="allcell">${studs[i][j]}</div>`);
+            }
+            document.write(`</div>`);
+        }
+
+        // ----------------------------------------------------------------------------------------------------
+
+        document.write(`<div class= logo1>4. 성별 등수(남자)</div>`) // 남자 등수
+
+        let headerText2 = ['반', '성별', '성명', '국어', '영어', '수학', '총점', '평균', '등급', '등수'];
+        let header2 = `<div class="row">`;
+        for (const text of headerText2) {
+            header2 += `<div class="cell">${text}</div>`;
+        }
+        header2 += `</div>`;
+
+        document.write(header2)
+
+
+        for (let i = 0; i <= 50 && i < male_studs.length; i++) {
+            document.write(`<div class="allrow">`);
+            for (let j = 0; j < male_studs[i].length; j++) {
+                document.write(`<div class="allcell">${male_studs[i][j]}</div>`);
+            }
+            document.write(`</div>`);
+        }
+
+        // ----------------------------------------------------------------------------------------------------
+
+        document.write(`<div class= logo1>4. 성별 등수(여자)</div>`) // 여자 등수
+
+        let headerText3 = ['반', '성별', '성명', '국어', '영어', '수학', '총점', '평균', '등급', '등수'];
+        let header3 = `<div class="row">`;
+        for (const text of headerText3) {
+            header3 += `<div class="cell">${text}</div>`;
+        }
+        header3 += `</div>`;
+
+        document.write(header3)
+
+
+        for (let i = 0; i <= 50 && i < female_studs.length; i++) {
+            document.write(`<div class="allrow">`);
+            for (let j = 0; j < female_studs[i].length; j++) {
+                document.write(`<div class="allcell">${female_studs[i][j]}</div>`);
             }
             document.write(`</div>`);
         }

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11_login2</title>
+</head>
+<body>
+    <h1>11_login2</h1>
+    <script>
+        /*
+        보완점 : alert(`${pname}님 안녕하세요`)를 남발함. 
+        */
+
+        for(;;){
+            let pid = prompt("아이디")
+            let pw = prompt("비밀번호")
+            let pname = prompt("이름")
+
+
+            if(pid == 'aaa' && pw == '1111' && pname == '장동건'){
+
+                alert(`${pname}님 안녕하세요`)
+                break
+            }
+
+            else if(pid == 'bbb' && pw == '2222' && pname == '장서건'){
+
+                alert(`${pname}님 안녕하세요`)
+                break
+            }
+
+            else if(pid == 'ccc' && pw == '3333' && pname == '장남건'){
+
+                alert(`${pname}님 안녕하세요`)
+                break
+            }
+
+            else{alert(`로그인에 실패하셨습니다.`)
+                continue
+            }
+                
+        }
+        
+
+    </script>
+</body>
+</html>

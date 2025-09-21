@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13_do_while</title>
+</head>
+<body>
+    <h1>13_do_while</h1>
+    <script>
+        let i = 0;
+        while(i < 5){ // while문
+            console.log('while 실행', i)
+            i++
+        }
+        console.log('while 종료 --------------- 1')
+
+        i = 0;
+        do{ // do~while문 1번에 있는 while문과 결과값은 같다.
+            console.log('do~while 실행', i)
+            i++
+        }while(i < 5)
+        console.log('do~while 종료 --------------- 1')
+
+
+
+        i = 10;
+        while(i < 5){ // while문 : i가 10인데 i < 5 조건이 안맞기에 시행안함.
+            console.log('while 실행', i)
+            i++
+        }
+        console.log('while 종료 --------------- 2')
+
+        i = 10;
+        do{ // do~while문 : i가 10인데 i < 5 조건이 안맞지만 최초 1회는 실행함 따라서 do~while 실행 10이 출력. / 조건에 충족하지 않아도 최초 1회 실행
+            console.log('do~while 실행', i)
+            i++
+        }while(i < 5)
+        console.log('do~while 종료 --------------- 2')
+        
+    </script>
+</body>
+</html>

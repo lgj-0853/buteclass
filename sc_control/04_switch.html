@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_switch</title>
+</head>
+<body>
+    <h1>04_switch</h1>
+    <script>
+        switch(20){
+            case 30: 
+                document.write(`30입니다 1<br>`)
+            case 10: // 동일한 값 가능
+                document.write(`10입니다 <br>`)
+            case 30: 
+                document.write(`30입니다 2<br>`)
+            case 20:  // 이동하여 실행
+                document.write(`20입니다 1<br>`)
+            case 40: 
+                document.write(`40입니다 <br>`)
+            case 20: 
+                document.write(`20입니다 2<br>`)
+        }
+
+        document.write(`switch 종료 ------------- 1 <br>`)
+
+        switch(20){
+            case 30: 
+                document.write(`30입니다 1<br>`)
+            break; // 제어문 탈출
+            case 10: // 동일한 값 가능
+                document.write(`10입니다 <br>`)
+            break;
+            case 30: 
+                document.write(`30입니다 2<br>`)
+            break;
+            case 20:  // 같은 값이 있을 경우, 먼저 설정된 case 실행(break가 제어문 탈출하니까 그럼)
+                document.write(`20입니다 1<br>`)
+            break;
+            case 40: 
+                document.write(`40입니다 <br>`)
+            break;
+            case 20:
+                document.write(`20입니다 2<br>`)
+        }
+
+        document.write(`switch 종료 ------------- 2 <br>`)
+
+         switch(100){
+            case 30: 
+                document.write(`30입니다 1<br>`)
+            break; 
+            case 10:
+                document.write(`10입니다 <br>`)
+            break;
+            default: //else와 같음
+                document.write(`기본값입니다 <br>`)
+            break;
+            case 20:
+                document.write(`20입니다 1<br>`)
+            break;
+            case 40: 
+                document.write(`40입니다 <br>`)
+            break;
+        }
+
+        document.write(`switch 종료 ------------- 3 <br>`)
+
+        switch(123.456){ // 값에 정수, 실수, 문자열, boolean 모두 가능하다. 
+            case true: 
+                document.write(`true입니다 1<br>`)
+            break; 
+            case 123.456:
+                document.write(`123.456입니다 <br>`)
+            break;
+            default:
+                document.write(`기본값입니다 <br>`)
+            break;
+            case "나는 무너":
+                document.write(`나는 무너입니다 1<br>`)
+            break;
+            case 50,60,70: 
+                document.write(`50,60,70입니다 <br>`)
+            break;
+            case 40: 
+                document.write(`40입니다 <br>`)
+            break;
+        }
+
+        document.write(`switch 종료 ------------- 4 <br>`)
+
+        switch(50){ // 값에 정수, 실수, 문자열, boolean 모두 가능하다. 
+            case true: 
+                document.write(`true입니다 1<br>`)
+            break; 
+            case 123.456:
+                document.write(`123.456입니다 <br>`)
+            break;
+            default:
+                document.write(`기본값입니다 <br>`) // 기본값 출력
+            break;
+            case "나는 무너":
+                document.write(`나는 무너입니다 1<br>`)
+            break;
+            case 50,60,70: // 50 진입 안함
+                document.write(`50,60,70입니다 <br>`)
+            break;
+            case 40: 
+                document.write(`40입니다 <br>`)
+            break;
+        }
+
+        document.write(`switch 종료 ------------- 5 <br>`)
+
+        let grade = "과장"
+        let base = 500
+
+        switch(grade){
+            case"부장":
+                var bonus = 0.5
+            break;
+
+            case"과장":
+                var bonus = 0.3
+            break;
+
+            case"대리":
+                var bonus = 0.2
+            break;
+
+            default:
+                var bonus = 0.1
+        } 
+
+        let money = base * (1+bonus)
+        document.write(money)
+
+        document.write(`<br>직급 종료 ------------- 5 <br>`)
+
+        let coffee = "아프리카노"
+        let cf_num = 2
+        
+        switch(coffee){
+            case "아메리카노":
+                var cf_cost = 2000
+                break; 
+            case "아시아노":
+                var cf_cost = 3000
+                break; 
+            default:
+                var cf_cost = 4000
+        }
+
+        let cf_order = cf_cost * cf_num;
+        document.write(`해당 메뉴는 ${coffee}*${cf_num}개입니다.<br>`)
+        document.write(`해당 가격은 ${cf_order}원입니다.`)
+
+    </script>
+</body>
+</html>

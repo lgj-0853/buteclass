@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_if</title>
+</head>
+<body>
+    <h1>01_if</h1>
+    <script>
+        if(true){
+            document.write("참입니다1 <br>")
+            document.write("참입니다1 <br>")
+            document.write("참입니다1 <br>")
+        }
+
+        document.write("if 종료 -----------------1 <br>")
+        
+        if(false) // 중괄호{} 가 없을 경우 이하 1개의 종속 명령구문 필수
+
+        document.write("참입니다2 <br>") // 이 명령구문만 if문에 종속
+
+        document.write("참입니다2 <br>") // if 문과 상관없음
+        document.write("참입니다2 <br>")
+
+        document.write("if 종료 -----------------2 <br>")
+
+         if(false){ // 참일 때 if문, 거짓이면 else문에 있는 코드가 출력된다.(머리)
+            document.write("if~else 참입니다 <br>")
+        }else{ // 단독 사용 불가 (꼬리)
+                document.write("if~else 거짓입니다 <br>")
+        }
+
+        document.write("if~else 종료 -----------------3 <br>")
+
+        // else{ 단독 사용 불가하며 if문과 순서 바꾸기 불가 
+        //         document.write("if~else 거짓입니다 <br>")
+        // }
+        // if(false){ // 참일 때 if문, 거짓이면 else문에 있는 코드가 출력된다. 
+        //    document.write("if~else 참입니다 <br>")}
+
+        var jum = 65;
+
+        if(jum >= 80){
+            document.write("우수 2 <br>")
+        }else{ 
+                document.write("미달 2 <br>")
+        }
+
+        document.write("if~else 종료 -----------------4 <br>")
+
+        if(jum >= 80){
+            document.write("우수 3 <br>")
+        } // 종속되지 않음. 이미 끝난 사안이기 때문에 if(jum >=60)과는 별도로 봐야한다. 그래서 jum이 88이라면 우수3, 정상3이 출력될 것이다. 
+
+
+        if(jum >= 60){
+            document.write("정상 3 <br>")
+        }
+        
+        else{ 
+            document.write("미달 3 <br>")
+        }
+
+        document.write("if~else 종료 -----------------5 <br>")
+
+        if(jum >= 80){
+            document.write("우수 4 <br>")
+        } // 종속되지 않음. 이미 끝난 사안이기 때문에 if(jum >=60)과는 별도로 봐야한다. 그래서 jum이 88이라면 우수3, 정상3이 출력될 것이다. 
+
+
+        else if(jum >= 60){
+            document.write("양호 4 <br>")
+        }
+
+        else if(jum >= 40){ // else if를 써서 조건문을 만들어주면 된다. 이러면 종속됨. 
+            document.write("정상 4 <br>")
+        }
+
+        //else if(jum >= 60){ 점층 구조로 작성해야 한다. 80 > 60 > 40 순으로... 따라서 <- 이 코드는 잘못되었음.
+        //    document.write("양호 4 <br>")
+        //}
+        
+        else{ 
+            document.write("미달 4 <br>")
+        }
+
+        document.write("if~else if~else 종료 -----------------6 <br>")
+
+        /* if(jum >= 80){ 머리
+            document.write("우수 4 <br>")
+        } // 종속되지 않음. 이미 끝난 사안이기 때문에 if(jum >=60)과는 별도로 봐야한다. 그래서 jum이 88이라면 우수3, 정상3이 출력될 것이다. 
+
+
+        else if(jum >= 60){ 몸통
+            document.write("양호 4 <br>")
+        }
+
+        else if(jum >= 40){ // else if를 써서 조건문을 만들어주면 된다. 이러면 종속됨.몸통
+            document.write("정상 4 <br>")
+        }
+        
+        else{ 꼬리
+            document.write("미달 4 <br>")
+        } 
+            
+        머리 - 몸통 - 꼬리 순이어야 하며, 머리는 독자적으로 행동가능하지만 else if, else는 생략 가능하다. else와 else if 순서 바꾸면 안된다.
+        */
+
+        document.write("if~else if~else 종료 -----------------7 <br>")
+
+        if(jum >= 80){
+            document.write("우수 5 <br>")
+        } 
+
+        else if(jum >= 60){
+            if(jum%2==0){ // 중첩 if 문 가능
+                document.write("짝수 - <br>")
+            }else{
+            document.write("홀수 - <br>")
+        }
+            document.write("양호 5 <br>")
+        }
+
+        else if(jum >= 40){ 
+            document.write("정상 5 <br>")
+        }
+
+        document.write("if~else if~else 종료 -----------------8 <br>")
+
+
+    </script>
+</body>
+</html>
+

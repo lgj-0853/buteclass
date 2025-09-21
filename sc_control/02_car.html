@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_car</title>
+    <style>
+        .wrapper{
+            border: 3px solid #000;
+            text-align: center;
+            width: 500px;
+            height: 320px;
+            
+        }
+
+        .car_logo{
+            border: 1px solid #000;
+            width: 500px;
+            height: 50px;
+            line-height: 50px;
+            font-weight: bold;
+            font-size: 25px;
+            background-color: #808080;
+            color: #000;
+        }
+
+        .car_sp, .car_ol, .car_sf{
+            border: 1px solid #000;
+            width: 200px;
+            height: 30px;
+            line-height: 30px;
+            font-weight: bold;
+            float: left;
+            background-color: #808080;
+            color: #000;
+        }
+
+        .car_sp_score{
+            border: 1px solid #000;
+            width: 296px;
+            height: 30px;
+            line-height: 30px;
+            float: right;
+        }
+
+        .car_tot_score{
+            border: 1px solid #000;
+            width: 500px;
+            height: 30px;
+            line-height: 30px;
+            font-weight: bold;
+            font-size: 16px;
+            clear: both;
+        }
+
+        .car_tot{
+            border: 1px solid #000;
+            width: 500px;
+            height: 50px;
+            line-height: 50px;
+            font-weight: bold;
+            font-size: 20px;
+            clear: both;
+            background-color: #808080;
+            color: #000;
+        }
+
+        .car_tot_grade{
+            width: 500px;
+            height: 80px;
+            line-height: 80px;
+            font-weight: bold;
+            font-size: 32px;
+            clear: both;
+        }
+
+        .우수{
+            color: #00f;
+            font-weight: bold;
+        }
+
+        .보통{
+            color: #0f0;
+            font-weight: bold;
+        }
+
+        .불량{
+            color: #f00;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>02_car</h1>
+    <script>
+        var car_speed = 30, car_oil = 50, car_safe = 63;
+        var car_score = (car_speed * 0.4) + (car_oil * 0.25) + (car_safe * 0.35)
+        var car_grade = car_score >= 80 ? "우수" :
+                        car_score >= 60 ? "보통" :
+                        "불량"
+
+
+        document.write(`<div class=wrapper><div class=car_logo>'ㅇㅇ' 자동차 성능</div>`)
+        document.write(`<div class=car_sp>속도</div>`)
+        document.write(`<div class=car_sp_score>${car_speed}점</div>`)
+        document.write(`<div class=car_ol>연비</div>`)
+        document.write(`<div class=car_sp_score>${car_oil}점</div>`)
+        document.write(`<div class=car_sf>안정성</div>`)
+        document.write(`<div class=car_sp_score>${car_safe}점</div>`)
+        document.write(`<div class=car_tot>성능점수</div>`)
+        document.write(`<div class=car_tot_score>${car_score}점</div>`)
+        document.write(`<div class=car_tot_grade><div class='${car_grade}'>${car_grade}</div></div></div>`)
+
+
+
+
+/*
+  자동차 성능을 점수로 계산하세요
+  각 점수는 100점 만점을 기준으로 입력된다
+  성능 점수의 반영도 속도->40%, 연비->25%, 안정성->35% 
+                                             글자색
+
+        결과 : 성능 점수kr : 80 이상 - 우수        파랑
+                         60 이상 - 보통        녹색
+                         나머지 - 불량         빨강
+
+결과물은 div로 구성할 것
+*/
+
+    </script>
+</body>
+</html>
+

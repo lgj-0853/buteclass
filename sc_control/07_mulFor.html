@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_mulFor</title>
+</head>
+
+<body>
+    <h1>07_mulFor</h1>
+    <script>
+        for (let h = 1; h <= 12; h++) { // 이중 for문임. 
+            document.write(`<h3>0${h}시</h3>`)
+            for (let m = 0; m < 60; m++) {
+                document.write(`0${h} : ${m} <br>`)
+            }
+        }
+
+        document.write(`<hr>`)
+
+        for (let dan = 2; dan <=9; dan++){
+            document.write(`<h3>${dan}단</h3>`)
+            for (let su = 1; su <= 9; su++){
+                document.write(`${dan} * ${su} = ${dan * su} <br>`)
+            }
+        }
+
+        
+          /// 2단계
+        for (let gob = 1; gob < 10; gob++) {
+            let ttt = ''
+            let aaa = ''
+            for (let dan = 2; dan <10; dan++) {
+                aaa+= `${dan}단\t\t`
+                ttt+=`${dan}x${gob}=${dan * gob}\t`
+            }
+            console.log(aaa)
+            console.log(ttt)  
+        }
+
+    </script>
+</body>
+
+</html>
