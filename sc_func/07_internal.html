@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07_internal</title>
+</head>
+<body>
+    <h1>07_internal</h1>
+    <script>
+        // alert("경고창입니다.") : 경고창 표시 
+
+        //let rr = prompt("소원을 말해봐") : prompt로 해당 칸에 입력을 하면
+        //document.write(`rr : ${rr} <br>`) : rr값으로 출력이 된다. (거진 안쓰인다.)
+
+        //let rr = confirm("주문하실래요?") : confirm으로 창이 뜨는데 확인/취소가 나온다.
+        //document.write(`rr : ${rr} <br>`) : 확인을 누르면 true, 취소를 누르면 false가 나온다.
+
+        // --------------------------------------------------------------------------------------------------------------------- (1) 
+
+        let no = 0 // 변수 no에 0을 주었고
+        function aaa(){ // 함수명 aaa에 매개변수는 없고
+            no++ // aaa가 호출되면 no를 1 증가시켜라
+            document.write(`aaa 이지롱 ${no} <br>`) // no 변수를 출력해라
+        }
+
+        function aaaStop(){ // 내장함수 할 때는 매개변수가 없어야 한다.
+            clearInterval(rr) // setInterval() 을 종료
+        }
+
+        /// aaa() : aaa를 호출(기본적인 것)
+
+        // setTimeout(aaa,2000) : ms - 밀리초( 1/1000 초 ) setTimeout(명령, 시간) 2000ms 뒤에 aaa 함수를 호출하겠다.(예약)
+
+        // setInterval(aaa, 1000) : 1000ms 간격으로 aaa 함수를 계속 반복해서 호출
+
+        let rr = setInterval(aaa, 1000) // rr에 setInterval(aaa, 1000)을 할당하게 됨.
+
+        // aaaStop() : aaaStop을 호출하면 그 안에 있는 clearInterval(rr) 때문에 작동을 하지 않음. 곧바로 종료된다는 뜻임.
+        setTimeout(aaaStop,10000) // 10000 ms 뒤에 aaaStop 함수를 호출하겠다.(예약) 근데 aaaStop 함수에는 clearInterval이 있으니까 10초 뒤에 종료가 됨.
+
+        
+
+    </script>
+</body>
+</html>

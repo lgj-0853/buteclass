@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_funcCall</title>
+</head>
+
+<body>
+    <h1>04_funcCall</h1>
+    <script>
+
+        // scope에 관한 설명(var와 전역변수의 차이점을 중점으로 알아볼 것 같음.)
+
+        function fn_1() { // let, var, c 모두 잘 출력됨.
+            let a = 10 // 블럭 변수(제어문 선언 구간에서만 사용)
+            var b = 2000 // 지역 변수(선언된 함수 구간에서만 사용)
+            c = 3333 // 전역 변수(모든 구간에서 사용) - 보안에 취약함(모두가 쓰는 공공재라서 그럼)
+            document.write(`fn_1() 시작 ${a} ${b} ${c}<br>`)
+
+            document.write(`fn_1() 끝 <br>`)
+        }
+
+        // ----------------------------------------------------------------------(1) fn_1이라는 함수명에 매개변수는 없음. {} 안에 let a = 10, var b = 2000, c = 3333이라는 변수를 주었음.
+        // let은 블럭변수로 제어문 선언 구간일 때만 사용하며 구간을 벗어나면 휘발됨.
+        // var은 지역변수로 선언된 함수 구간일 때만 사용하며 구간을 벗어나면 휘발됨.
+        // 키워드 없이 변수명 = 변수값;을 입력하면 전역변수가 되며 언제어디서든 모든 구간에서 사용하지만(공공재) 그만큼 보안에 취약함. 하나 잘못되면 전체가 주르르 망함.
+        // fn_1(); 호출한 결과 document.write(`fn_1() 시작 ${a} ${b} ${c}<br>`), document.write(`fn_1() 끝 <br>`)의 값이 문제없이 출력됨
+
+
+
+        function fn_2() {
+            //document.write(`fn_2() 시작 ${a} ${b} ${c}<br>`) a의 값이 정의되지 않았다고 뜸. 왜냐하면 let으로 구간을 벗어났기 때문
+            //document.write(`fn_2() 시작 ${b} ${c}<br>`) b의 값도 정의되지 않았다고 뜸. 왜냐하면 var은 함수에서는 함수 구간에서만 사용하기 때문에 벗어나서 못쓰는 것임.
+
+            let aa = 90 // 새롭게 변수를 주었음. aa, bb, cc를 각각 let, var, 전역변수에다가
+            var bb = 800
+            cc = 7000 
+
+            document.write(`fn_2() 시작 ${c} ${aa} ${bb} ${cc}<br>`) // c의 값은 잘 나옴. 전역 변수라 어디든지 다 사용 가능.
+            fn_3() // 함수에 함수를 부른 것임. 지금은 안에 감싼 형태가 됨 (fn_2시작 |fn_3시작 |fn_4시작 fn_4끝 |fn_3끝 |fn_2끝)
+            cc++
+            document.write(`fn_2() 끝  ${aa} ${bb} ${cc} <br>`)
+        }
+
+        // ----------------------------------------------------------------------(2) fn_2이라는 함수명에 매개변수는 없음. {} 안에 let a = 10, var b = 2000, c = 3333이라는 변수를 주지 않은 상태로
+        // document.write 안에 ${a}, ${b}, ${c}를 출력하려고 함. 그러니까 전역변수인 c만 출력이 되고 나머지는 안됨.(let, var은 구간 내에서만 사용해야하는데 fn_1이라는 함수 안에 들어있기 때문에 쓰지를 못함)
+        // 그래서 새로운 변수 let aa = 90, var bb = 800, cc = 7000을 줌. 그리고 다시 document.write를 써서 시작과 끝에 ${c} ${aa} ${bb} ${cc}을 출력하니까 잘됨.
+        // (0003번) fn_3()로 호출됐기 때문에 'doc.wt(fn_2시작) doc.wt(fn_3시작) doc.wt(fn_4시작) cc++ doc.wt(fn_4끝) cc++ doc.wt(fn_3끝) cc++ doc.wt(fn_2끝)' 형태가 됨. 그리고 호출받은 순간 fn_4 함수는 사라짐. 
+
+
+
+        function fn_3() {
+            // document.write(`&nbsp;&nbsp;&nbsp; fn_3() 시작 ${aa} ${bb} ${cc} <br>`)
+            document.write(`&nbsp;&nbsp;&nbsp; fn_3() 시작 ${cc} <br>`)
+            fn_4() // 함수는 다 쓰면 사라짐. 따라서 결과값은 document.write(`fn_2() 시작 ${c} ${aa} ${bb} ${cc}<br>`) 이 부분만 출력될 것임.
+            cc++
+            document.write(`&nbsp;&nbsp;&nbsp; fn_3() 끝 ${cc} <br>`)
+        }
+
+        // ----------------------------------------------------------------------(3) fn_3이라는 함수명에 매개변수는 없음. {} 안에 변수를 주지 않은 상태로 document.write로 출력만 한 상태임.
+        // (0002번) fn_4()로 호출했기 때문에  'doc.wt(fn_3시작) doc.wt(fn_4시작) cc++ c++ doc.wt(fn_4끝) doc.wt(fn_3끝)' 형태가 됨. 그리고 호출받은 순간 fn_4 함수는 사라짐.
+
+        function fn_4() {
+            document.write(`&nbsp;&nbsp;&nbsp; fn_4() 시작 ${cc} <br>`)
+            // fn_2() : 순환 구조가 되며 무한반복됨. 순환 구조 하지 말것. 
+            cc++
+            document.write(`&nbsp;&nbsp;&nbsp; fn_4() 끝 ${cc} <br>`)
+        }
+
+        // ----------------------------------------------------------------------(4) fn_4이라는 함수명에 매개변수는 없음. {} 안에 변수를 주지 않은 상태로 document.write로 출력만 한 상태임.
+        // 함수 안에 함수를 넣기 위해서 여기서 부터 파악해보겠음.(0001번) fn_4번에는 'doc.wt(fn_4시작) cc++ doc.wt(fn_4끝)'으로 구성하는데 fn_3 안에 fn_4를 호출했음.
+
+        function fn_5() {
+            let a = 10 // 블럭 변수(제어문 선언 구간에서만 사용)
+            var b = 2000 // 지역 변수(선언된 함수 구간에서만 사용)
+
+            function sub(){ // 함수 중첩 정의
+                // a, b  - 함수가 정의된 외부에서의 지역, 블럭변수는 전역으로 사용(외부 함수가 끝나면 전역의 기능이 사라짐)
+                document.write(`&nbsp;&nbsp;&nbsp; sub() 시작 ${a}, ${b} <br>`) // 함수 안에 있는 함수는 바깥쪽에 있는 함수 사용 가능(중첩의 의의)
+                tt = "sub_전역"
+                let zz = "sub_블럭"
+                var xx = "sub_지역"
+                document.write(`&nbsp;&nbsp;&nbsp; sub() 끝  ${a}, ${b}, ${tt}, ${zz}, ${xx}<br>`) // 모두 출력이 됨. 외부함수에서의 변수들을 내부 함수에서 사용 가능.
+            }
+            document.write(`fn_5() 시작 ${a}, ${b} <br>`)
+            sub()
+            // document.write(`fn_5() 끝 ${a}, ${b}, ${tt}, ${zz}, ${xx} <br>`)
+            // 내부 함수에서 선언한 전역변수는 외부함수에서 사용 가능
+            // 내부 함수의 지역, 블럭변수는 함수 호출이 종료됨과 동시에 변수도 소멸되어 접근 불가(let, var)
+            document.write(`fn_5() 끝 ${a}, ${b}, ${tt} <br>`) // tt는 전역변수이기에 출력이 되지만 내부 함수 안에서의 let, var 변수는 호출되지 않음.
+        }
+
+        // ----------------------------------------------------------------------(5) fn_5이라는 함수명에 매개변수는 없음. {} 안에 let a = 10, var b = 2000이라는 변수를 준 상태에서 그 안에 함수를 또 넣음
+        // 이게 함수 안에 함수라고 해서 중첩된 상황인데 이러면 안에 있는 함수가 바깥쪽에 있는 함수의 변수 사용 가능. 안쪽 함수는 변수명이 sub에 매개변수는 없고, {} 안에 doc.write(시작) ~ doc.write(끝) 사이에 
+        // tt라는 전역변수, zz라는 let 블럭변수, var는 지역변수를 넣었음. 그리고 doc.write 출력 안에 a, b를 했는데 a, b가 출력되는 것을 확인할 수 있음.
+
+        fn_1(); // 호출함
+        fn_2(); // 호출함
+        fn_5(); // 호출함
+
+        // 전역변수는 함수가 종료되어도 소멸되지 않음.
+        document.write(`main : ${c}, ${cc}, ${tt} <br>`)
+        // document.write(`main : ${bb}, ${b} <br>`) 에러남(전역변수가 아닌 지역변수이기 때문에 소멸됨)
+
+        document.write(`<hr>`)
+
+        function fn_6(aa){ // 매개변수 var aa와 같음
+            document.write(`fn_6() 시작 ${aa} <br>`)
+            let res = fn_7(10)
+            document.write(`fn_6() 끝 ${aa} ${res} <br>`)
+            return res/10
+        }
+
+        // ----------------------------------------------------------------------(6) fn_6이라는 함수명에 aa라는 매개변수를 넣고 {} 안에 doc.write(fn_6 시작) ~ doc.write(fn_6 시작)을 넣음.
+        // return 값은 res/10이라는 값을 주었음.
+        // (0002번) let res = 변수값; 값; 형태로 변수값인 fn_7(10)이 res에 담겼음. res의 값은 fn_7(10)이고 return의 값은 fn_8(10)/10이 됨. 691.2가 나옴. 
+        // 'doc.wt(fn_6시작) 'doc.wt(fn_7시작 10) doc.wt(fn_8시작 100 200 300) doc.wt(fn_8끝 444 200 300) doc.wt(fn_7끝 10 1234) 'doc.wt(fn_6끝)'
+        // res에는 fn_8(100,200,300)의 값이 도출됩니다.
+
+        function fn_7(bb){
+            // 콜러의 매개변수 접근 불가
+            // document.write(`&nbsp;&nbsp;&nbsp; fn_7() 시작 ${aa} ${bb} <br>`)
+            document.write(`&nbsp;&nbsp;&nbsp; fn_7() 시작 ${bb} <br>`)
+            let res = fn_8(100,200,300)
+            document.write(`&nbsp;&nbsp;&nbsp; fn_7() 끝 ${bb} ${res}<br>`)
+            return res+5678
+        }
+
+        // ----------------------------------------------------------------------(7) fn_7이라는 함수명에 bb라는 매개변수를 넣고 {} 안에 doc.write로 ${aa}, ${bb}의 값을 출력하려고 했으나
+        // aa가 정의되지 않았다고 뜸. 왜냐하면 aa는 fn_6의 매개변수로 다른 함수이기에 변수를 쓰지 못한다. 접근이 불가능하다는 뜻. doc.write(fn_7 시작) ~ doc.write(fn_7 시작)을 넣음.
+        // return 값은 res+5678이라는 값을 줌.
+        // (0001번) let res = 변수값; 형태로 변수값인 fn_8(100,200,300)이 res에 담겼음. res의 값은 fn_8(100,200,300)이고 return의 값은 fn_8(100,200,300)+5678이 됨. 1234+5678 = 6912가 나옴.
+        // 'doc.wt(fn_7시작) doc.wt(fn_8시작 100 200 300) doc.wt(fn_8끝 444 200 300) doc.wt(fn_7끝)' 어? 왜 fn_8 끝에서 cc값이 444인가요? 
+        // 아까 doc.write fn_8 시작 후에 cc의 값을 444로 주었기 때문에 끝나는 구간에서 cc를 출력했을 때는 444의 값이 나옴.
+
+        function fn_8(cc, dd, ee){
+            
+            document.write(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fn_8() 시작 ${cc}, ${dd}, ${ee} <br>`)
+            var cc = 444 // 매개변수와 중첩 가능 
+            // let dd = 555 // 에러 발생 <- 다른데 가면 소멸됨
+            document.write(`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fn_8() 끝 ${cc}, ${dd}, ${ee} <br>`)
+            return 1234
+        }
+
+        // ----------------------------------------------------------------------(8) fn_8이라는 함수명에 cc, dd, ee라는 매개변수를 넣고 doc.write(fn_8 시작) ~ doc.write(fn_8 시작)을 넣음.
+        // 그 안에 var cc = 444로 주었는데 어? 왜 fn_8의 매개변수와 겹치지 할 수 있는데 중첩 가능하다. let은 불가능. return 값은 1234를 주었음.
+    
+
+        let rr = fn_6(3)
+        // (0003번) fn_6(3)의 rr의 값은 691.2가 도출됨
+        // 'doc.wt(fn_6시작 3) 'doc.wt(fn_7시작 10) doc.wt(fn_8시작 100 200 300) doc.wt(fn_8끝 444 200 300) doc.wt(fn_7끝 10 1234) 'doc.wt(fn_6끝 3 6912)'
+        // res에는 fn_7(10)의 값(1234+5678)이 도출됩니다.
+        document.write(`main : ${rr} <br>`) // 691.2를 출력
+
+    </script>
+</body>
+</html>

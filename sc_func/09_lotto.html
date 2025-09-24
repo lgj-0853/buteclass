@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09_lotto</title>
+</head>
+
+<body>
+    <h1>09_lotto</h1>
+    <script>
+        /* [mission] 난수를 발생시키는 random 함수를 사용해 로또 복권 뽑기
+
+        0 < x < 1 난수 발생(랜덤 값임)
+        document.write(`Math.random() : ${Math.random()} <br>`)
+        20 < x < 60 난수 발생(랜덤 값임)
+        document.write(`Math.trunc(Math.random()*40+20) : ${Math.trunc(Math.random()*40+20)} <br>`)
+        */
+
+        let arr = [] // arr이라는 배열 하나를 만듬
+
+        while (arr.length != 6) { // while로 arr의 길이가 6이 아니면 나가
+            let no = parseInt(Math.random() * 45 + 1) // no에 1 < x < 45 (parseInit으로 소수점 절삭)
+            if (!arr.includes(no)) { // arr에 no가 없으면
+                arr.push(no) // arr에 no를 맨끝에 넣을게.
+            }
+        }
+        arr.sort() // arr 정렬할게
+        document.write(`${arr} <br>`) // arr 출력할게
+
+        /* [mission] 빙고를 구현
+
+        숫자 범위 : 1-> 100
+        출력모양 : 5 x 5
+
+        * * * * *
+        * * * * *
+        * * * * *
+        * * * * *
+        * * * * *
+        
+        */
+
+        /*
+        빙고를 만들기 위해서는 
+        1. 5x5의 판을 만들어야 함
+        2. 각각 숫자가 달라야 함. => 5줄씩 끊어야 하는데 25줄 전체를 다 할지, 아니면 5줄씩 반복해서 만들지.
+        3. 
+        */
+
+        let arr2 = []
+
+        while(arr2.length != 25){
+            let num = parseInt(Math.random()*100 + 1)
+            if(!arr2.includes(num)){
+                arr2.push(num)
+            }
+        }
+
+        for (let key in arr2) {
+            document.write(`${arr2[key]} `)
+
+            if(key%5==4){
+            document.write(`<br>`)
+        }
+        }
+
+
+    </script>
+</body>
+
+</html>

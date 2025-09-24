@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_funcExam</title>
+    <style>
+        *{
+            margin: 0;
+            padding :0;
+        }
+        section > div{
+            clear: both;
+        }
+        section{
+            clear: both;
+        }
+        section > div>div{
+            float: left;
+            width: 100px;
+            height: 30px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h1>05_funcExam</h1>
+    <script> // 함수 내부에 함수들을 배치하여 효율적으로 결과값을 도출하기 위함.
+        function exam(){ // (1)exam이라는 함수명에 매개변수는 없고 {} 안에는 아무도 없음.
+
+             function studOne(stud){
+                let res = '<div>'
+                for (const k in stud) {
+                    res += `<div>${stud[k]}</div>`
+                }
+                res+='</div>'
+                return res
+            }
+
+            // (8) 이 공간의 의미는 section 안에 div를 감싸서 스타일을 예쁘게 꾸며주기 위함이다. studOne이라는 함수명에 stud라는 매개변수를 이용(studs 아님) {} 안에 let res를 '<div>'로 놓고
+            // for문을 이용해 stud(=st)의 key 값을 k에 할당받아 res += `<div>${stud[k]=value}</div>`를 만들겠다. res+= `</div>'를 감쌈으로서
+            // <div><div>ffff</div><div>ffff</div><div>ffff</div><div>ffff</div></div> 이런식으로 된다.
+
+            function ppp(){
+                let ttt = '<section>'
+                     for (const st of studs) { // studs를 사용할 수 있는 이유는 지금 ppp 함수가 내부 함수임. 바깥 함수에 let studs = studInit()이라고 변수를 만들어서 사용 가능한 것임.
+                       // 
+                       ttt += studOne(st) 
+                     }
+                ttt += '</section>'
+                //'<section> 
+                //    <div>
+                //      <div></div>
+                //    </div>
+                // </section>'
+                document.write(ttt)
+            }
+
+            // (7) 출력부를 통해 화면에 출력되도록 할 것인데 section으로 전체를 감싼 후 div로 세부적으로 감싸서 스타일을 꾸며줄 것임.
+            //  ppp 함수명을 사용했고 매개변수는 없음. {} 안에 let ttt = `<section>`이라는 문자열로 주었음. for of 문을 사용해서 studs 안의 원소값을 st에 할당할 거야. 
+            // {name:'조인성',jum:[77,78,72]} 이런 식으로 할당받음. ttt += studOne (='<div><div>이름이여</div><div>점수지롱</div><div>합계여</div></div>') 이런식임.
+            // sutdOne에 대해서 알아야하니까 나중으로 미루고 (8)로 가보자. 
+            // (9) <section><div><div>ffff</div><div>ffff</div><div>ffff</div><div>ffff</div></div><section> 이런식이 완성
+
+
+                // 1. 입력부
+             let studs = studInit() // studs 안에 return 값으로 배열을 할당받았음.
+             //console.log(studs)
+             // (3) 입력부에서 만든 값들을 변수 studs에다가 studInit()의 값을 담은 것과 동시에 호출함. studInit의 return값이 studs에 할당받은 것.
+
+             //2. 계산부
+             calc(studs)    //studs는 주소참조(값은 같은데 주소가 달라서 배열명을 따로 줘야함. 그래서 arr로 매개변수를 넣은 것이 보일 것임)
+             console.log(studs)
+             // (4) 입력부에서 만든 값들을 통해 계산을 해야하는 상황이기에 studInit의 return값을 할당받은 studs를 호출명에 적어 calc 안에 있는 매개변수가 studs의 값을 할당받도록 한다.
+
+             //3. 출력부
+             ppp()
+             // (10) 출력부를 호출한 상황.
+        }
+
+        function studInit(){ // 01. 입력부로 배열 안에 key배열이 있는 2차원 배열임.
+            return [
+                {name:'조인성',jum:[77,78,72]},
+                {name:'정우성',jum:[67,68,62]},
+                {name:'감우성',jum:[97,98,92]},
+                {name:'감수성',jum:[57,78,82]},
+                {name:'진주성',jum:[47,98,32]},
+                {name:'왜그래성',jum:[87,88,82]}
+            ]
+        }
+
+        // (2) 입력부를 만들어서 뭘 입력받아서 할 것인지 초기 설정을 해준다. 현재 return 값을 배열 안에 key 배열이 있는 2차원 배열 형태임. 
+        // studInit이라는 함수명에 매개변수를 없고 {} 안에 return 값으로 배열이 있는 상태임
+        // -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        function calc(arr){ // 02. 계산부로 studs 값을 할당받은 arr
+            for (let st of arr) { // arr의 원소값을 st에게 할당({name:'조인성',jum:[77,78,72]}를 할당)
+                st.tot = 0 // st에서 key가 tot인 value가 0이고, st에서 key가 jum인 것을 j가 할당받아서 
+                for (const j of st.jum) {
+                    st.tot += j // 총합을 구한다.
+                }
+                st.avg = st.tot/st.jum.length // 평균은 총합/st 안에 jum의 갯수
+            }
+            
+        }
+ 
+        // (5) 계산부를 만들어서 입력부의 값들을 불러서 계산시키게 하는 공간이다.  
+        // calc이라는 함수명에 매개변수를 arr(studs의 값들을 할당받음)로 설정해두고 {} 안에 for문을 만들어서 arr(studs의 값 = studInit의 return 값)의 원소값(key)을 st에 할당한다.
+        // st(key)에서 tot라는 키에 value를 0을 준다. for문을 받아서 st(key)에서 jum의 원소값을 j에게 할당하며, st.tot = st.tot + j
+        // 그러면 최종 st.tot의 합계가 각각 나와 tot라는 키에 value로 할당받고, st.avg(value)는 st.tot / st.jum(value).length , avg와 tot 자체는 key값으로 새로 추가된 것이며 st.tot와 st.avg는 
+        // tot와 avg가 새로 추가되면서 받은 value 값이다.
+        // -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        
+
+        exam()
+
+
+        /*
+        직사각형의  가로와 세로를 입력받아 넓이와 둘레를 처리하는 함수를 구현하세요
+        1. 입력(recInit), 연산(recCalc), 출력부(recPPP)로 나누어 모듈 함수를 정의
+        2. 모듈함수를 연동하여 처리하는 함수(rectangle) 정의
+        */
+    
+
+
+        function rectangle(){
+
+            let area, border, ww, hh // 변수를 임시전역변수로 두고
+            function recInit(){ // 입력부를 ww = 5, hh = 6으로 둔다.
+                ww = 5; hh = 6
+            }
+
+            function recCalc(){ // 계산을 위해 변수 area(넓이), border(둘레)를 설정
+                area = ww* hh
+                border = (ww + hh)*2
+            }
+
+            function recPPP(){ // 출력을 위해 document.write(출력값)
+
+                document.write(`<h3>넓이 : ${area} , 둘레 : ${border}</h3>`)
+            }
+
+            recInit() // 함수는 정의만 하는 것이 아니라 호출을 해야한다.
+            recCalc()
+            recPPP()
+        }
+
+        rectangle()
+
+
+    </script>
+</body>
+
+</html>

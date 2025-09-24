@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_function</title>
+</head>
+
+<body>
+    <h1>01_function</h1>
+    <script>
+        /*
+        함수 정의
+        1. 함수 이름 : fn_1
+        2. 매개 변수 : aa, bb
+        3. 리턴값 : 100
+
+        */
+        function fn_1(aa, bb) { // 함수 이름, 매개 변수
+            document.write(`fn_1() 실행 : ${aa}, ${bb} <br>`)
+            return 100 // 리턴값
+        } // 정의만 했기 때문에 일이 일어나지 않음(호출이 필요함)
+
+        let rr = fn_1("아기상어", "엄마상어") // 함수 호출 - 함수명(인수1, 인수2) : 인수갯수를 맞춰야 한다. 현재 aa, bb 2개이기에 아기상어, 엄마상어 2개로 맞춘 것.
+        document.write(`rr : ${rr} <br>`) // 함수실행 후 함수 호출 된 자리에 return 값을 받아온다.
+        // 변수에 대입은 return 이후 실행된다.
+
+        rr = fn_1("장수풍뎅이", "사슴벌레") // 함수 재호출(다른 걸로 바꿀 수 있다.)
+        document.write(`rr : ${rr} <br>`) // 함수실행 후 함수 호출 된 자리에 return 값을 받아온다.
+
+        rr = fn_1() // 매개변수가 없으면 undefined로 뜬다. 에러는 아님.
+        document.write(`rr : ${rr} <br>`) // 함수실행 후 함수 호출 된 자리에 return 값을 받아온다.
+
+        // -------------------------------------------------------------------------------------------------------------------------------------------------
+
+        function fn_2() { // 매개변수도 없고, return도 없는 상황.
+            document.write(`fn_2() 실행 : param X, ret X <br>`)
+
+        }
+
+        rr = fn_2("장수풍뎅이", "사슴벌레") // 장수풍뎅이와 사슴벌레를 입력했지만 undefined로 뜬다.
+        document.write(`rr : ${rr} <br>`)
+
+        fn_2()
+
+        // -------------------------------------------------------------------------------------------------------------------------------------------------
+
+        function fn_3(aa, bb, cc) { // 매개변수만 있는 상황
+            document.write(`fn_3() 실행 : ${aa}, ${bb}, ${cc}, ret X <br>`)
+
+        }
+
+        rr = fn_3("상어", "고래", "갈치") // 매개변수에 있는 값들은 제대로 출력이 되지만, return이 없기 때문에 rr 값은 undefined가 뜬다. 
+        document.write(`rr : ${rr} <br>`)
+
+        // -------------------------------------------------------------------------------------------------------------------------------------------------
+
+        function fn_4() { // return만 있는 상황
+            document.write(`fn_4() 실행 : param X, ret 나는 무너 <br>`)
+            return "나는무너"
+        }
+
+        rr = fn_4("상어", "고래", "갈치") // rr 값만 할당받아 "나는 무너"값이 추출된다.
+        document.write(`rr : ${rr} <br>`)
+
+        // -------------------------------------------------------------------------------------------------------------------------------------------------
+
+        function triangle(aa, bb, cc) {
+            document.write(`직각 삼각형의 넓이는 : ${(aa * bb) / 2}, 둘레는 : ${aa + bb + cc} <br>`)
+            return ""
+        }
+
+        rr = triangle(2, 3, 5)
+        document.write(`${rr}`)
+
+        function triangle2(aa) {
+            document.write(`원의 넓이는 : ${3.14 * (aa ** 2)}, 둘레는 : ${2 * 3.14 * aa} <br>`)
+            return ""
+        }
+
+        rr = triangle2(6)
+        document.write(`${rr}`)
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
