@@ -10,7 +10,9 @@
 <body>
     <h1>12_date</h1>
     <script>
-        let today = new Date()
+
+        // 01. 날짜 생성(시간의 기준은 os 현재 시간을 기준으로 한다. 컴퓨터 시간을 기준으로 한다는 것임.)
+        let today = new Date() // let 변수명 = new Date()
         console.log(today)
 
         let first = new Date(0) // timestamp : 1970-1-1 0:0:0를 기준으로 1/000 마다 1 층가
@@ -20,20 +22,94 @@
         let birth = new Date("2002-08-26 15:30:43") // 문자열로 날짜 및 시간 입력
         console.log(birth)
 
-                      // 년, 월, 일, 시, 분, 초
-                      // 월은 : 0 -> 11
-        birth = new Date(2002,9-1,2,16,40,12) // 문자열로 날짜 및 시간 입력
+        birth = new Date("2002/08/26 15:30:43") // 문자열로 날짜 및 시간 입력
         console.log(birth)
 
+        // 년, 월, 일, 시, 분, 초
+        // 월은 : 0 -> 11
+        birth = new Date(2002, 9 - 1, 2, 16, 40, 12) // 문자열로 날짜 및 시간 입력
+        console.log(birth)
+
+        birth = new Date(2013, 10 - 1, 11) // 년, 월, 일만 작성
+        console.log(birth)
+
+        birth = new Date(2015, 8 - 1, 6, 5, 12) // 년, 월, 일, 시, 분만 작성 (초는 일단 제외시켜놓음)
+        console.log(birth)
+
+        birth = new Date(2013, 45 - 1, 152, 78, 247, 987) // 말도 안되게 높은 숫자를 설정해도 바꿔치기가 된다.(시간 단위를 초과한 수치도 자동 연산 처리) / Thu Feb 02 2017(4년 점프) 10:23:27 GMT+0900 (한국 표준시)
+        console.log(birth)
+
+        birth = new Date(2013, -20, -10, -5, 248, 987) // (시간 단위를 초과한 수치도 자동 연산 처리) / Tue Apr 19 2011 23:24:27 GMT+0900 (한국 표준시)
+        console.log(birth)
+
+        birth = new Date("2002-78-84 95:83:82") // 문자열 입력은 말도 안되게 높은 숫자를 설정하면 안된다. 시간 수치에 맞춰야 한다. 
+        console.log(birth)
+
+        birth = new Date(2025, 9 - 1, 1) // 년, 월, 일만 작성 (아래 비교군을 위한 참조 자료)
+        console.log(birth)
+
+        birth = new Date(2025, 9 - 1, 0) // 일에 0을 설정하면 전달의 마지막 날짜가 나옴.
+        console.log(birth)
+
+        // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        // 02. 날짜 가져오기
+
+        console.log("년도 : ", today.getFullYear())
+        console.log("월 : ",today.getMonth()+1)
+        console.log("일 : ",today.getDate())
+        console.log("요일 : ",today.getDay()) // 숫자로 나옴 오늘이 목요일이라 4가 출력
+        // 일 월 화 수 목 금 토
+        // 0  1  2 3  4  5  6
+
+        console.log("시간 : ",today.getHours())
+        console.log("분 : ",today.getMinutes())
+        console.log("초 : ",today.getSeconds())
+        console.log("1/1000초 : ",today.getMilliseconds())
+        console.log("Timezone : ",today.getTimezoneOffset()) // 분 단위 UTC 차이
+        console.log("time : ",today.getTime())
+        console.log("time : ",today.getTime()/1000/60/60/24/365 +1970)
+
+        // ---------------------------------------------------------------------------------------------------- (1) get
+
+        today.setFullYear(1234) // 해당 년도를 설정
+        console.log(today)
+
+        today.setMonth(50-1) // 해당 월을 설정
+        console.log(today)
+
+        today.setDate(15) // 해당 일을 설정
+        console.log(today)
+
+        // today.setDay(15) // day는 없음. 날짜를 설정하면 자동으로 요일이 계산되기 때문
+
+        today.setHours(37) // 해당 시간을 설정
+        console.log(today)
+
+        today.setMinutes(50) // 해당 분을 설정
+        console.log(today)
+
+        today.setSeconds(20) // 해당 초를 설정
+        console.log(today)
+
+        today.setMilliseconds(987) // 해당 1/1000초를 설정(화면에는 안보임)
+        console.log(today)
+
+        today.setTime(0) // 1970년 1월 1일 9시로 되어있음(초기)
+        console.log(today)
+
+        // ---------------------------------------------------------------------------------------------------- (2) set
+
+
+        let ocl = new Date()
+        let arr = ocl.getDay()
+
+        console.log(`${ocl.getFullYear()}-${ocl.getMonth()+1}-${ocl.getDate()} (${'일월화수목금토'[ocl.getDay()]}) ${ocl.getHours()}:${ocl.getMinutes()}`)
+
+        // ${'일월화수목금토'[ocl.getDay()]} 나 이부분을 생각도 못하고 있었다. 예전에 배웠던 건데. if문 돌려서 getDay 숫자가 나오는 만큼 해당 요일을 출력하라고 했는데 이게 더 편하다.
 
     </script>
 </body>
-<!--
-1. 기획
-2. 생각
-3. 설계
-4. 구현
 
--->
 </html>
 
