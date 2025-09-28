@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06_balloon</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        section{
+            width: 1200px;
+            height: 600px;
+            margin: auto;
+            border: 20px double gray;
+            
+        }
+
+        img{
+            display: block;
+            width: 300px;
+            height: 300px;
+            float: left;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+        document.querySelector("img:nth-of-type(1)").onclick = function () { 
+                img5 = document.querySelector("img:nth-of-type(5)")
+                img5.style.background = "#fa0"
+            }
+        document.querySelector("img:nth-of-type(2)").onmouseover = function () { 
+                img6 = document.querySelector("img:nth-of-type(6)")
+                img6.style.boxShadow = "10px 10px 10px #000"
+            }
+
+        document.querySelector("img:nth-of-type(3)").onmouseout = function () { 
+                img7 = document.querySelector("img:nth-of-type(7)")
+                img7.style.opacity = 0.5
+            }
+        
+        document.querySelector("img:nth-of-type(4)").onmouseup = function () { 
+                img7 = document.querySelector("img:nth-of-type(8)")
+                img7.style.transform = `rotate(90deg)`
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <h1>06_balloon</h1>
+    <section>
+        <img src="../fff/01.png" alt="">
+        <img src="../fff/02.png" alt="">
+        <img src="../fff/03.png" alt="">
+        <img src="../fff/04.png" alt="">
+        <img src="../fff/05.png" alt="">
+        <img src="../fff/06.png" alt="">
+        <img src="../fff/07.png" alt="">
+        <img src="../fff/08.png" alt="">
+    </section>
+</body>
+</html>
+
+<!--
+1. 풍선 이미지 8개 만들기
+2.  img1 -> img 5 / img2 -> img 6 / img3 -> img 7 / img4 -> img 8으로 대응되게 하기
+3. img1은 눌렀을 때 반응 / img2는 마우스 올렸을 때 반응 / img3은 마우스 나갔을 때 반응 / img4는 마우스버튼을 클릭하고 뗄 때 반응
+
+
+
+-->

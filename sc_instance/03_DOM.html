@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03_DOM</title>
+    <style>
+        #cons {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        function conLog(msg) {
+            // getElementById - 아이디가 cons인 요소를 가져옴.
+            let cons = document.getElementById("cons")
+
+            // innerHTML - 텍스트노드(글자내용)
+            cons.innerHTML += msg + "<br/>" // 안에 집어넣고 <br>하겠다.
+        }
+
+        window.onload = function () {
+            conLog("집보내줘")
+
+            // documentElement - 전체를 다 가져옴(element 역할을 한다.)
+            // 전체(배열)
+            let rrtt = document.documentElement
+            console.log(rrtt)
+
+            // 전체의 하위 객체 - 자식을 가져옴(후손은 직접 가져오지 않음)
+            /*0: head
+            1: text
+            2: body 
+            length: 3
+            [[Prototype]]*/
+
+            let arr = rrtt.childNodes // 전체의 하위 객체인 자식을 가져옴. rrtt는 문서 document의 전체 요소에서 childNodes를 사용하여 하위 객체 자식을 arr에 담았음.
+            console.log(arr)
+            console.log(rrtt.childElementCount) // 하위 갯수 (인덱스 형식으로 나옴)
+
+            // 전체의 하위 객체 - 자식을 가져옴(후손은 직접 가져오지 않음)
+            let arr2 = arr[2].childNodes // 그 document > body 안에 자식을 가져옴.(div, span, ....)
+            console.log(arr2)
+
+            //tag 배열
+            let spans = document.getElementsByTagName("span") // 태그 이름이 'span'이라는 놈을 찾아서 배열로 만들겠다는 의미 
+            console.log(spans)
+            console.log(spans[1])
+            conLog(spans[1].innerHTML) // span[1]의 텍스트 노드
+            spans[0].innerHTML = '스펜제로' // 바꾸기 가능
+
+            conLog(spans[0].getAttribute('zz-data')) // 속성 가져오기
+
+            spans[0].setAttribute('zz-data', 5678) // zz-data="5678" // 속성 변경
+            conLog(`hasAttribute : ${spans[0].hasAttribute('zz-data')}`) // 속성 유무(속성을 변경한 시점에서는 있다고(true)나옴)
+            spans[2].setAttribute('zz-data', 5454) // zz-data="5454" // 속성 변경
+            spans[0].removeAttribute('zz-data') // zz-data를 삭제 // 속성 삭제
+            conLog(`hasAttribute : ${spans[0].hasAttribute('zz-data')}`) // 속성 유무(속성을 삭제한 시점에서는 없다고(false)나옴)
+            spans[0].className = "ddd"
+            spans[0].className = "eee" // class를 통째로 바꿔줌
+            spans[0].removeAttribute('class') // class 제거. class도 속성임
+            spans[0].setAttribute('class','jjj')
+            spans[0].classList.add('mmm') // class 속성값을 추가할 수 있음
+            spans[0].classList.add('ooo') // class 속성값을 추가할 수 있음
+            spans[0].classList.add('mmm') // 이미 존재하는 class 명은 중첩 추가하지 않는다.
+            conLog(`mmm 유무: ${spans[0].classList.contains('mmm')}`) // 유무확인(true)
+            conLog(`wer 유무: ${spans[0].classList.contains('wer')}`)
+
+            spans[0].classList.remove('mmm') // class 속성값 제거
+            conLog(`mmm 유무: ${spans[0].classList.contains('mmm')}`) // 유무확인(false)
+            spans[0].classList.toggle('sss') // 토글 - 없으면 추가
+            spans[0].classList.toggle('sss') // 토글 - 있으면 삭제
+
+            spans[1].style.color = "#f00" // style로 css 기능 사용 가능
+
+            // class 배열
+            let bbbs = document.getElementsByClassName("bbb") // bbb라는 클래스명을 불러와서 배열로 만들겠다는 의미
+            console.log(bbbs)
+
+            bbbs[1].style.border = "1px solid #0f0"
+            bbbs[2].setAttribute("id", "b2") // "속성", "속성값"
+
+            // id - 최초 1개만 가지고 옴
+            let b0 = document.getElementById("b0")
+            conLog(b0.innerHTML)
+
+            // id - 최초 1개만 가지고 옴
+            let q1 = document.getElementById("q1")
+            conLog(q1.innerHTML)
+
+            let b2 = document.getElementById("b2")
+            conLog(b2.innerHTML)
+
+            // 속성
+            let q2 = document.getElementById("q2")
+            q2.removeAttribute("id") // 속성 삭제
+            q2.setAttribute("id", "qq33") // 속성 변경
+
+
+            // 요소생성 및 추가
+            // 생성
+            let nnItem = document.createElement("div")
+            nnItem.innerHTML = "새로운 div" // <>새로운 div<>
+            nnItem.className = "ccc" // class="ccc" // 클래스 변경
+            console.log(nnItem)
+            bbbs[2].appendChild(nnItem) // 자식으로 추가를 하는데 하위요소 중 맨 앞(push와 유사)
+
+            //자신을 삭제
+            bbbs[3].remove() // 해당 개체가 사라짐
+            // q2.removeChild(div)
+            let q2Child = q2.childNodes
+            console.log(q2Child)
+
+            q2.removeChild(q2Child[1]) // 내꺼 안에 있는 자식을 삭제시킴.
+
+            // box 로 작성된 div 삭제
+            let divs = document.getElementsByTagName("div")
+            for (let i = divs.length - 1; i >= 0; i--) {
+                let dd = divs[i]
+                if (dd.innerHTML.startsWith("box")) {
+                    console.log(dd)
+                    dd.remove()
+                }
+            }
+
+            let qq33Par = q2.parentNode // 부모 노드 (<-> childNodes와 반대개념)
+            console.log("qq33Par : ", qq33Par)
+            conLog(qq33Par.getAttribute("zz-data")) // q2의 부모 노드인 <div zz-data="부모"></div>를 함수에 호출
+
+            let bro1 = q2.previousElementSibling // 형이나 누나 노드(q2 바로 앞에 있는 q1을 가져옴.)
+            console.log(bro1)
+            
+            let bro2 = bro1.nextElementSibling // 뒤에 있는 동생 노드(q1 바로 뒤에 있는 q2를 가져옴)
+            console.log(bro2)
+
+            let aaa = document.getElementsByClassName("aaa")[0] // 왜 [0]을 붙였을까?
+            console.log(aaa)
+
+            let rrr = document.createElement("div") // 안에 태그를 넣기(for문이 자주 쓰일 것 같음)
+            rrr.innerHTML="rrr"
+            aaa.prepend(rrr) // 자식으로 추가를 하는데 하위요소 중 맨 앞(unshift와 유사) <-- append는 맨 뒤에 추가
+            
+            let fff = document.createElement("div") // 안에 태그를 넣기(for문이 자주 쓰일 것 같음)
+            fff.innerHTML="fff"
+            aaa.insertBefore(fff, q1) // fff가 q1 앞에 옴. 자식으로 추가를 하는데 하위요소 중 q1 앞(중간삽입)
+            
+            
+            aaa.insertBefore(rrr, q1) // 이미 추가된 요소를 다시 추가할 경우 -> 이동(위치 변경뿐임)
+
+            let ggg = document.createElement("div") // 안에 태그를 넣기(for문이 자주 쓰일 것 같음)
+            ggg.innerHTML="ggg"
+            aaa.insertBefore(ggg, null) // 자식으로 추가를 하는데 참조요소가 null일 경우 맨 뒤에 추가(== append)
+
+            let qsb2 = document.querySelector("#b2") // style 선택자 사용 #은 css 기준 id 선택자 였음.
+            console.log(qsb2)
+
+            let qs = document.querySelector(".aaa > div:nth-of-type(3)") // querySelector <- 🔥🔥🔥
+            console.log(qs.innerHTML)
+            
+            qs = document.querySelector(".bbb") // 해당 객체가 여러 개인 경우 최초 1개만 리턴(다른 것은 배열형태로 되어서 [0~i]되지만 quertSelector는 최초 1개만 가져옴)
+            console.log(qs)
+
+            let qsArr = document.querySelectorAll(".bbb") // 해당 객체가 여러 개인 경우 배열로 가져옴(기본과 All의 차이)
+            console.log(qsArr)
+
+            qsArr = document.querySelectorAll("#b2") // b2가 한 개임에도 All을 사용하면 배열로 리턴
+            console.log(qsArr)
+            
+            qsArr = document.querySelectorAll("#q1") // 같은 id가 여러 개인 경우 배열로 가능
+            console.log(qsArr)
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <h1>03_DOM</h1>
+    <div class="aaa"> <!--div(aaa) 안에 세부 div와 span을 넣었음-->
+        aaa0
+        <div class="bbb" id="b0">bbb0</div>
+        <div qwer="11" id="q1">qwer11</div>
+        <div qwer="11" id="q1" class="bbb">qwer22 bbb1</div>
+        <span zz-data="1234">span0</span>
+        <span>span1</span>
+    </div>
+
+    <div zz-data="부모"> <!--div(aaa) 안에 세부 div와 span을 넣었음-->
+        aaa0
+        <div class="bbb">bbb2</div>
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div qwer="33" id="q1">qwer33</div>
+        <div qwer="44" id="q2">qwer44
+            <div zz-data="자식">자식자식</div>
+        </div>
+        <span class="bbb">span2</span>
+    </div>
+
+    <div id="cons">ciytedkj</div>
+</body>
+
+</html>

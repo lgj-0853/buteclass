@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_domWatch</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .date {
+            font-size: 4rem;
+        }
+
+        .time {
+            font-size: 3rem;
+        }
+
+        article {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 100px;
+            margin: auto;
+            border: 10px groove #000;
+        }
+
+
+        article>div:nth-of-type(3) {
+            position: absolute;
+            width: 2px;
+            height: 85px;
+            background-color: #f00;
+            box-shadow: 3px 3px 5px #000;
+            left: 99px;
+            top: 15px;
+            transform-origin: bottom center;
+            border: 3px solid;
+
+        }
+
+        article>div:nth-of-type(2) {
+            position: absolute;
+            width: 2px;
+            height: 65px;
+            background-color: rgb(74, 88, 209);
+            box-shadow: 3px 3px 5px #000;
+            left: 99px;
+            top: 35px;
+            transform-origin: bottom center;
+            border: 3px solid;
+
+        }
+
+        article>div:nth-of-type(1) {
+            position: absolute;
+            width: 2px;
+            height: 45px;
+            background-color: rgb(42, 224, 26);
+            box-shadow: 3px 3px 5px #000;
+            left: 99px;
+            top: 55px;
+            transform-origin: bottom center;
+            border: 3px solid;
+
+        }
+    </style>
+    <script>
+        /*window.onload = function () {
+
+            let dateBox = document.querySelector(".date")
+            let timeBox = document.querySelector(".time")
+
+            function dateGo() {
+                let now = new Date()
+                let ttt = `${now.getFullYear()}년 ${now.getMonth() + 1}월 ${now.getDate()}일`
+                // console.log(ttt)
+                dateBox.innerHTML = ttt
+
+                timeBox.innerHTML = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
+            }
+
+            let dg = setInterval(dateGo, 1000)
+
+        }*/
+    </script>
+    <script>
+        window.onload = function () {
+
+            let dateBox = document.querySelector(".date")
+            let timeBox = document.querySelector(".time")
+
+            function dateGo() {
+                let now = new Date()
+                let ttt = `${now.getFullYear()}년 ${now.getMonth() + 1}월 ${now.getDate()}일`
+                // console.log(ttt)
+                dateBox.innerHTML = ttt
+
+                timeBox.innerHTML = `${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`
+            }
+
+            let dg = setInterval(dateGo, 1000)
+
+            // ------------------------------------------------------------------------------------------- (1) 연도, 월 화면에 보여주기
+
+
+            setInterval(atclock, 1000)
+
+            function atclock() {
+                let now = new Date()
+
+                let handler3 = document.querySelector(".clock3")
+                let timeclock3 = now.getSeconds()
+
+                let handler2 = document.querySelector(".clock2")
+                let timeclock2 = now.getMinutes()
+
+                let handler1 = document.querySelector(".clock1")
+                let timeclock1 = now.getHours()
+
+
+                let movemove3 = timeclock3 * 6
+                let movemove2 = timeclock2 * 6
+                let movemove1 = timeclock1 * 30
+
+
+
+                handler3.style.transform = `rotate(${movemove3}deg)`
+
+                handler2.style.transform = `rotate(${movemove2}deg)`
+
+                /*if (movemove3 == 0) {
+                    handler2.style.transform = `rotate(${movemove2}deg)`
+                }*/
+
+                handler1.style.transform = `rotate(${movemove1}deg)`
+
+                /*if (movemove2 == 0) {
+                    handler1.style.transform = `rotate(${movemove1}deg)`
+                }*/
+            }
+
+            atclock()
+
+            // ------------------------------------------------------------------------------------------- (2) 시계 만들기(미완성 - 눈금)
+
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <h1>04_domWatch</h1>
+    <section>
+        <div class="date">2020년 7월 12일</div>
+        <div class="time">17:30:20</div>
+    </section>
+    <article>
+        <div class="clock1"></div>
+        <div class="clock2"></div>
+        <div class="clock3"></div>
+    </article>
+
+
+
+</body>
+
+</html>
+
+<!--
+02. 시, 분, 초
+-->
